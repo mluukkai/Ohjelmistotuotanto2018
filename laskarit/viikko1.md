@@ -32,12 +32,17 @@ ja varmista vielä:
 
 Korjausehdotuksesta tulee nyt pullrequest ja se päivittyy siinä vaiheessa sivulle kun joku kurssihenkilökunnasta hyväksyy sen.
 
-
 ## 1 komentorivi
 
 Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edelleen erittäin tärkeää hallita komentorivin eli terminaalin käyttö. Itseasiassa komentorivin merkitys on jopa nousussa. 
 
-Opettele käyttämään "riittävästi" komentoriviä (ks. alla oleva lista). Opettelu käy ehkä helpoiten tekemällä osoitteessa [https://www.codecademy.com/learn/learn-the-command-line](https://www.codecademy.com/learn/learn-the-command-line) olevan onlinekurssin kaksi ensimmäistä osaa _Navigating the File System_ ja _Viewing and Changing the File System_
+Varmista, että osaat käyttää "riittävästi" komentoriviä (ks. alla oleva lista). 
+
+Jos osaamisessasi on puutteita (ks alla oleva lista) kertaaminen käy ehkä helpoiten tekemällä osoitteessa https://www.codecademy.com/learn/learn-the-command-line olevan online-kurssin kaksi ensimmäistä osaa _Navigating the File System_ ja _Viewing and Changing the File System_
+
+*HUOM. Codecademy vaatii kirjautumisen Facebook, Google tai GitHub -tunnuksella. Kurssilla käytetään muutenkin GitHubia, niin se tunnus pitäisi kaikilla olla vähintään olla olemassa, jotta pääsee kirjautumaan.*
+
+Kurssin Tietokone työvälineenä tämän syksyn [komentorivimateriaali](https://tkt-lapio.github.io/komentorivi/) käsittelee myös suurta osaa tehtävän komennoista.
 
 Tämän tehtävän jälkeen sinun tulisi hallita seuraavat asiat:
 * käsitteet
@@ -61,23 +66,20 @@ Tulet tarvitsemaan komentorivin käyttötaitoja tällä kurssilla ja muutenkin o
 
 Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaat yllä luetellut asiat.
 
-## 2 Githubiin
+## 2 Githubiin [versionhallinta]
 
-Tee itsellesi tarvittaessa tunnus GitHubiin
+Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
-* mene osoitteeseen https://github.com/plans
-* valitse create free account
-
-Luo repositorio nimellä ohtu-viikko1 
+Luo githubiin repositorio nimellä ohtu-viikko1 
 
 * klikkaa yläpalkin oikeassa reunassa olevaa  "Create a new repo"-ikonia 
 * **laita rasti** kohtaan Initialize this repository with a README 
 
 ![README-tiedoston alustusrasti](https://github.com/mluukkai/ohtu2017/raw/master/images/lh1-1.png)
 
-Luo paikalliselle koneellesi _ssh-avain_ jos et ole jo sitä tehnyt (tapahtuu komentoriviltä käsin)
+Jos et ole vielä luonut koneellesi _ssh-avainta_, tee se nyt
 
-* Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell) riittää että teet stepit 1 ja 2.
+* Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell) riittää että teet stepit 1 ja 2 tai viime kevään [OTM](https://github.com/mluukkai/otm-2018/blob/master/tehtavat/viikko1.md#julkinen-avain)-materiaalista
 
 Lisää julkinen avain githubiin:
 
@@ -110,9 +112,9 @@ missä komennon <code>git clone</code> parametrina on repositoriosi sivulta selv
 
 Nyt paikalliselle koneellesi syntynyt hakemisto <code>ohtu-viikko1</code>, joka on on githubissa olevan repositorion klooni.
 
-## 3 Gitin alkeet
+## 3 Gitin alkeet [versionhallinta]
 
-Olet jo todennäköisesti käyttänyt Gitiä esim. harjoitustöissä. Tässä tehtävässä harjoitellaan seuraavia komentoja:
+Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä tehtävässä harjoitellaan seuraavia komentoja:
 
 * git add
 * git commit
@@ -121,7 +123,7 @@ Olet jo todennäköisesti käyttänyt Gitiä esim. harjoitustöissä. Tässä te
 * git reset HEAD
 * .gitignore
 
-* Jos et vielä hallitse komentoja, käy läpi syksyn OTM:n [syksyn 2016 Git-tutoriaali](https://github.com/mluukkai/OTM2016/wiki/Viikon-3-paikanpaalla-tehtavat#versionhallinta) Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
+* Jos et vielä hallitse komentoja, käy läpi kevään 2018 OTM:n [Git-tutoriaali](https://github.com/mluukkai/otm-2018/blob/master/tehtavat/viikko1.md#gitin-alkeet) Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
 
 Lisää git-ohjeita löytyy runsaasti internetistä, esim:
   * [Pro Git -opas](http://git-scm.com/book), kannattaa lukea näin alkuun luku 2
@@ -157,7 +159,7 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
 
 komennolla man git add saat lisätietoa optiosta ja mm. vastausvaihtoehtojen selitykset. 
 
-## 4 Tiedostojen lisääminen GitHubiin
+## 4 Tiedostojen lisääminen GitHubiin [versionhallinta]
 
 Tehtävässä 2 tehtiin GitHubiin repositorio, joka liitettiin paikalliselle koneelle luotuun repositorioon "remote repositoryksi". Synkronoidaan paikallisen repositorion ja githubin tilanne:
 
@@ -165,7 +167,7 @@ Tehtävässä 2 tehtiin GitHubiin repositorio, joka liitettiin paikalliselle kon
 * varmista selaimella, että lisätyt tiedostot menevät GitHubiin
 
 
-## 5 Monta kloonia samasta repositoriosta
+## 5 Monta kloonia samasta repositoriosta [versionhallinta]
 
 Yleensä on tapana pitää GitHubissa olevaa repositorioa tiedostojen "keskitettynä" sijoituspaikkana ja liittää paikallisella koneella oleva repositorio GitHubissa olevan repositorion etärepositorioksi, kuten teimme tehtävässä 1. 
 
@@ -188,7 +190,7 @@ Luodaan nyt harjoituksen vuoksi paikalliselle koneelle repositoriosta toinen klo
 * lisää alkuperäiseen kopioon joitain tiedostoja ja pushaa ne GitHubiin
 * mene jälleen kloonattuun kopioon ja pullaa
 
-## 6 Repositorion siivous
+## 6 Repositorion siivous [versionhallinta]
 
 Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimääräiset tiedostot
 
@@ -202,7 +204,7 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
-* hae osoitteesta https://github.com/mluukkai/ohjelmistotuotanto2017/blob/master/koodi/ohtuvarasto.zip?raw=true löytyvä zipattu paketti
+* hae osoitteesta https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/koodi/ohtuvarasto.zip?raw=true löytyvä zipattu paketti
 * pura paketti sopivaan paikkaan 
 * siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
 
@@ -225,7 +227,7 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
 > Gradle is a build tool with a focus on build automation and support for multi-language development. If you are building, testing, publishing, and deploying software on any platform, Gradle offers a flexible model that can support the entire development lifecycle from compiling and packaging code to publishing web sites. Gradle has been designed to support build automation across multiple languages and platforms including Java, Scala, Android, C/C++, and Groovy, and is closely integrated with development tools and continuous integration servers including Eclipse, IntelliJ, and Jenkins.
 
-Olet todennäköisesti käyttänyt Ohjelmoinnin harjoitystyössä "buildaustyökaluna" mavenia. Gradle on uuden generaation buildaustyökalu, jonka on tarkoitus korvata maven. Gradle toimii pitkälti samojen periaatteiden mukaan kuin maven, mutta on kuitenkin huomattavasti helpommin konfiguroitavissa ja myös nopeampi kuin edeltäjänsä. Maven on vielä erittäin laajalti käytössä, mutta valtaosassa uusista projekteista käytetään nykyään gradlea. Gradle on myös oletusarvoinen buildinhallintatyökalu Android-sovelluskehityksessä. 
+Olet todennäköisesti käyttänyt aiemmilla kursseilla "buildaustyökaluna" mavenia. Gradle on uuden generaation buildaustyökalu, jonka on tarkoitus korvata maven. Gradle toimii pitkälti samojen periaatteiden mukaan kuin maven, mutta on kuitenkin huomattavasti helpommin konfiguroitavissa ja myös nopeampi kuin edeltäjänsä. Maven on vielä erittäin laajalti käytössä, mutta valtaosassa uusista projekteista käytetään nykyään gradlea. Gradle on myös oletusarvoinen buildinhallintatyökalu Android-sovelluskehityksessä. 
 
 * edellisessä tehtävässä lisättiin repositorioon gradle-muodossa oleva projekti, joka sisältää aikoinaan [ohjelmoinnin perusteissa](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/materiaali/02_oliot/#15) olleen luokan <code>Varasto</code>, sen käyttöä demonstroivan pääohjelman ja muutaman JUnit-testin
 * tutki gradle-muotoisen projektin hakemistorakennetta esim. antamalla komento <code>tree</code> projektin sisältävän hakemiston juuressa (_tree_ ei ole gradleen liittyvä käsky vaan normaali shell-komento)
@@ -267,7 +269,7 @@ Lisää tiedostoon _.gitignore_ rivi
 gradle.properties
 </pre>
 
-Emme halua laittaa määrittelyä versionhallintaan asti, sillä kyseessä on konekohtainen asetus. Myös myöhemmissä [tehtävissä](https://github.com/mluukkai/ohtu2017/blob/master/laskarit/1.md#8-travisci-osa-1) käytettävä _travis-ci_ häiriintyisi määritelmästä.
+Emme halua laittaa määrittelyä versionhallintaan asti, sillä kyseessä on konekohtainen asetus. Myös myöhemmissä [tehtävissä](https://github.com/mluukkai/ohtu2018/blob/master/laskarit/1.md#8-travisci-osa-1) käytettävä _travis-ci_ häiriintyisi määritelmästä.
 
 Jos jouduit tekemään tämän ratkaisun, on todennäköistä, että joudut toimimaan samoin jatkossa kaikkien gradle-projektien kohdalla.
 
@@ -312,7 +314,7 @@ Lisätty konfiguraatio siis kertoo, mikä ohjelman luokista on pääohjelma, eli
 
 ## 8. JUnit
 
-* kertaa tarvittaessa JUnitin perusteet osoitteesta https://github.com/mluukkai/OTM2016/wiki/JUnit-ohje
+* kertaa tarvittaessa JUnitin perusteet OTM:n [JUnit-ohjeesta](https://github.com/mluukkai/otm-2018/blob/master/web/junit.md) 
 
 * täydennä Ohtuvaraston testejä siten, että luokan Varasto testien rivikattavuudeksi (line coverage) tulee 100%
   * Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
@@ -506,8 +508,8 @@ Pushaa koodi Githubiin ja varmista, että Codecov generoi raportin siten, että 
 
 ## 14. riippuvuuksien injektointi osa 1
 
-* Tutustu riippuvuuksien injektointiin lukemalla https://github.com/mluukkai/ohjelmistotuotanto2017/blob/master/web/riippuvuuksien_injektointi.md
-* hae esimerkkiprojekti kurssirepositorion hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/mluukkai/ohjelmistotuotanto2017/tree/master/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
+* Tutustu riippuvuuksien injektointiin lukemalla https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/riippuvuuksien_injektointi.md
+* hae esimerkkiprojekti kurssirepositorion hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
   * järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
   * **tämän jälkeen kannattaa kopioida projekti tehtävien palautukseen käyttämäsi repositorion sisälle**
 
@@ -516,7 +518,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla.
 
 ## 15. riippuvuuksien injektointi osa 2: NHL-tilastot
 
-*  kurssirepositorion hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/mluukkai/ohjelmistotuotanto2017/tree/master/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia [http://nhl.com](http://nhl.com)-sivulla olevia, vuoden 2013-14 tilastotietoja
+*  kurssirepositorion hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia [http://nhl.com](http://nhl.com)-sivulla olevia, vuoden 2013-14 tilastotietoja
 
 * Ohjelma koostuu kolmesta luokasta.
   * <code>Statistics</code> on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
@@ -537,10 +539,10 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla.
 Statistics stats = new Statistics( new PlayerReader("http://nhlstats-2013-14.herokuapp.com/players.txt") );
 ```
 
-## 16.  NHLStatistics-ohjelman yksikkötestaus
+## 16. NHLStatistics-ohjelman yksikkötestaus
 
 * tee yksikkötestit luokalle Statistics
-  * testien kattavuuden (sekä instructions että branches) tulee (Statistics-luokan osalta) olla 100% (mitataan JaCoCo:lla, ks. [tehtävä 8](https://github.com/mluukkai/ohjelmistotuotanto2017/blob/master/laskarit/1.md#8-junit)
+  * testien kattavuuden (sekä instructions että branches) tulee (Statistics-luokan osalta) olla 100% (mitataan JaCoCo:lla, ks. [tehtävä 8](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/1.md#8-junit)
   * testit eivät saa käyttää verkkoyhteyttä
   * verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten rajapinnan Reader-toteuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
   * voit luoda stubin testin sisälle anonyyminä sisäluokkana seuraavasti:
@@ -575,12 +577,14 @@ public class StatisticsTest {
 
 Kun injektoit readerStub-olion testissä Statistics-oliolle, palauttaa se aina saman pelaajalistan.
 
-## 17. Forkkaa repositorio https://github.com/mluukkai/ohjelmistotuotanto2017
+## 17. Repositorion forkkaaminen [versionhallinta]
+
+Forkkaa repositorio https://github.com/mluukkai/ohjelmistotuotanto2018 
 
 * forkkaaminen tapahtuu seuraavasti:
   * kun olet kirjautuneena GitHubiin, mene yo. osoitteeseen
   * paina oikeassa yläkulmassa olevaa nappia "fork"
-* saat näin oman "forkatun" kopion repositoriosta ohjelmistotuotanto2017
+* saat näin oman "forkatun" kopion repositoriosta ohjelmistotuotanto2018
 * kloonaa forkattu repositorio paikalliselle koneellesi
 * tee repositorioon joku muutos ja pushaa muutos githubiin
 * tee forkkaamastasi repositoriosta "pull request":
