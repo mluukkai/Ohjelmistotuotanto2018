@@ -8,4 +8,4 @@
 
 ## Laskarit
 
-[1](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/1.md)
+[1](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/viikko1.md)
