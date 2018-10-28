@@ -1,4 +1,4 @@
-# Riippuvuuksien injektointi
+﻿# Riippuvuuksien injektointi
 
 Lue ensin [http://jamesshore.com/Blog/Dependency-Injection-Demystified.html](http://jamesshore.com/Blog/Dependency-Injection-Demystified.html)
 
@@ -149,7 +149,7 @@ class IOStub implements IO {
 }
 ```
 
-Stubille voidaan siis antaa "käyttäjän syötteet" konstruktorin parametrina. Ohjelman tulosteet saadaan suorituksen jälkeen kysyttyä stubilta.
+Stubille voidaan siis antaa "käyttäjän syötteet" konstruktorin parametrina. Ohjelman tulosteet saadaan suorituksen jälkeen kysyttyä stubilta. 
 
 Testi seuraavassa:
 
