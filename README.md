@@ -1,4 +1,4 @@
-# Ohjelmistotuotanto syksy 2018, Tietojenkäsittelytieteen laitos, Helsingin yliopisto
+# Ohjelmistotuotanto syksy 2018, Tietojenkäsittelytieteen laitos, Helsingin yliopisto (forkattu)
 
 <https://github.com/mluukkai/ohjelmistotuotanto2018/wiki/Ohjelmistotuotanto-syksy-2018>
 
