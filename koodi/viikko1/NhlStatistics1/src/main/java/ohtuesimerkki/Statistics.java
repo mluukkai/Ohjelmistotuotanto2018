@@ -41,7 +41,7 @@ public class Statistics {
         ArrayList<Player> topScorers = new ArrayList<Player>();
         Iterator<Player> playerIterator = players.iterator();
         
-        while (howMany>=0) {
+        while (howMany>0) {
             topScorers.add( playerIterator.next() );            
             howMany--;
         }
