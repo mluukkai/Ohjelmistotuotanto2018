@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtuesimerkki.StatisticsTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-11-04T20:19:03" hostname="dhcp-asv-91" time="0.006">
+  <properties/>
+  <testcase name="joukkueEiloydy" classname="ohtuesimerkki.StatisticsTest" time="0.004"/>
+  <testcase name="pelaajaLoytyy" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="joukkueKolme" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="pelaajaEiloydy" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="neljaParasta" classname="ohtuesimerkki.StatisticsTest" time="0.001"/>
+  <testcase name="joukkueYksipelaaja" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
