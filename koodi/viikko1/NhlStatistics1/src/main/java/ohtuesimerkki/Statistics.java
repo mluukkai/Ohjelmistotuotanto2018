@@ -11,7 +11,7 @@ public class Statistics {
 
     public Statistics() {
         PlayerReader reader = new PlayerReader("http://nhlstatistics.herokuapp.com/players.txt");
-        players = reader.getPlayers();       
+        players = reader.getPlayers();
     }
 
     public Player search(String name) {
@@ -26,26 +26,30 @@ public class Statistics {
 
     public List<Player> team(String teamName) {
         ArrayList<Player> playersOfTeam = new ArrayList<Player>();
-        
+
         for (Player player : players) {
             if ( player.getTeam().equals(teamName)) {
                 playersOfTeam.add(player);
             }
         }
-        
+
         return playersOfTeam;
     }
-
+    /**
+    *  Get players with highest goals + assists
+    * @param howMany lenght of the list.
+    * @return List of Players with top scores.
+    */
     public List<Player> topScorers(int howMany) {
         Collections.sort(players);
         ArrayList<Player> topScorers = new ArrayList<Player>();
         Iterator<Player> playerIterator = players.iterator();
-        
+
         while (howMany>=0) {
-            topScorers.add( playerIterator.next() );            
+            topScorers.add( playerIterator.next() );
             howMany--;
         }
-        
+
         return topScorers;
     }
 
