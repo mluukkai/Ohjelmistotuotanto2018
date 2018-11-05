@@ -10,3 +10,5 @@
 ## Laskarit
 
 [1](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/1.md) [2](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/2.md)
+
+Olipa kerran kaunis risteily, jolla kaikilla oli kivaa ja nukuttiin paljon ja levättiin levollisesti ja voitiin hyvin :)
