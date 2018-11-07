@@ -5,7 +5,7 @@ Jatketaan viime viikolla aloittamaamme [laskimen](https://github.com/mluukkai/oh
 
 Kertaa tarvittaessa nopeasti dokumentti https://github.com/mluukkai/ohtu2017/blob/master/web/riippuvuuksien_injektointi.md 
 
-ALlaolevat koodiesimerkit löytyvät gradle-muotoisina projekteina kurssirepositoriosta (hakemistossa koodi/viikko2)
+Allaolevat koodiesimerkit löytyvät gradle-muotoisina projekteina kurssirepositoriosta (hakemistossa koodi/viikko2)
 
 Päädyimme siis tilanteeseen, missä Laskin-luokasta on erotettu konkreettinen riippuvuus syötteen lukemiseen ja tulostamiseen. Laskin tuntee ainoastaan _rajapinnan_ <code>IO</code> jonka kautta se hoitaa syötteen käsittelyn ja tulostamisen. 
 
