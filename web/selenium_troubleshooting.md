@@ -2,7 +2,52 @@
 
 Osalla on ollut ongelmia Seleniumin toiminnan kanssa. Alla muutamia tapoja, miten ongelmat on saatu ratkaisuta. Jos törmäät ongelmaan ja saat sen ratkaistua jollain alla mainitsemattomalla tavalla, lisää ohje dokumenttiin.
 
-## tapa 1: chromedriverin downloadaus
+## tapa 1: HtmlUnit-driver
+
+Lisää projektille riippuvuudeksi _HtmlUnitDriver_ :
+
+```groovy
+dependencies {
+    // ...
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver',version: seleniumVersion  
+}
+```
+
+[HtmlUnitDriver](https://github.com/SeleniumHQ/selenium/wiki/HtmlUnitDriver) on ns. [headless](https://en.wikipedia.org/wiki/Headless_browser)-selain, eli sillä ei ole graafista käyttöliittymää. Jos haluat tietää millä sivulla selain on menossa, joudut esim. tulostamaan sivun lähdekoodin konsoliin komennolla <code>System.out.println(driver.getPageSource());</code>.
+
+Ota HtmlUnitDriver käyttöön seuraavasti:
+
+```java
+...
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
+public class Tester {
+
+    public static void main(String[] args) {
+        WebDriver driver = new HtmlUnitDriver();
+        driver.get("http://localhost:4567");
+        
+        // tulostetaan sivu konsoliin
+        System.out.println(driver.getPageSource());
+        
+        WebElement element = driver.findElement(By.linkText("login"));
+        element.click();
+
+        // tulostetaan sivu konsoliin
+        System.out.println(driver.getPageSource());
+        
+        // ...
+
+        driver.quit();
+    }
+    
+}
+```
+
+HtmlUnitDriver:in hyvä puoli on nopeus. Voit käyttää sitä myös testeissä. Testien debuggaaminen muuttuu hankalammaksi, mutta testit toimivat nopeasti. Testejä debugatessa best practice lienee sivun html-koodin tulostaminen konsoliin.
+
+
+## tapa 2: chromedriverin downloadaus
 
 Lataa [täältä](https://sites.google.com/a/chromium.org/chromedriver/downloads) ja asenna ChromeDriver.
 
@@ -20,7 +65,7 @@ System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver");
 
 Testejä varten kannattaa määrittely sijoittaa luokan <code>ServerRule</code> metodiin <code>before</code>.
 
-## Tapa 2: WebDriverManager
+## Tapa 3: WebDriverManager
 
 Lisää projektille riippuvuus _webdrivermanager_:
 
@@ -59,8 +104,7 @@ public void setUp() {
 }
 ```
 
-
-## tapa 3: firefox-driver
+## tapa 4: firefox-driver
 
 Kokeile käyttää FirefoxDriveria Chromen sijaan. 
 
@@ -114,55 +158,9 @@ public class Tester {
 
 Määrittele <code>FirefoxDriver</code> vastaavalla tavalla testeissä.
  
-
-## tapa 4: HtmlUnit-driver
-
-Lisää projektille riippuvuudeksi _HtmlUnitDriver_ :
-
-```groovy
-dependencies {
-    // ...
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver',version: seleniumVersion  
-}
-```
-
-[HtmlUnitDriver](https://github.com/SeleniumHQ/selenium/wiki/HtmlUnitDriver) on ns. [headles](https://en.wikipedia.org/wiki/Headless_browser)-selain, eli sillä ei ole graafista käyttöliittymää. Jos haluat tietää millä sivulla selain on menossa, joudut esim. tulostamaan sivun lähdekoodin konsoliin komennolla <code>System.out.println(driver.getPageSource());</code>.
-
-Ota HtmlUnitDriver käyttöön seuraavasti:
-
-```java
-...
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
-
-public class Tester {
-
-    public static void main(String[] args) {
-        WebDriver driver = new HtmlUnitDriver();
-        driver.get("http://localhost:4567");
-        
-        // tulostetaan sivu konsoliin
-        System.out.println(driver.getPageSource());
-        
-        WebElement element = driver.findElement(By.linkText("login"));
-        element.click();
-
-        // tulostetaan sivu konsoliin
-        System.out.println(driver.getPageSource());
-        
-        // ...
-
-        driver.quit();
-    }
-    
-}
-```
-
-HtmlUnitDriver:in hyvä puoli on nopeus. Voit käyttää sitä myös testeissä. Testien debuggaaminen muuttuu hankalammaksi, mutta testit toimivat nopeasti. Testejä debugatessa best practice lienee sivun html-koodin tulostaminen konsoliin.
-
 ## Tapa 5: Lataa Google Chrome koneellesi
 
-Suorita ensin Tapa 1. Sen jälkeen vasta tämän ohjeen mukaan.
+Suorita ensin Tapa 2. Sen jälkeen vasta tämän ohjeen mukaan.
 
 Jos saat seuraavanlaisen virheilmoituksen kun suoritat komennon gradle browse (toimii myös, jos virhe valittaa Chromen versiota): 
 
@@ -174,8 +172,6 @@ Command duration or timeout: 605 milliseconds
 Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
 
 Lataa koneellesi Google Chrome vaikkapa tämän ohjeen avulla: 
-
-
 
 Or if you want the actual Google Chrome, open a terminal and follow:
 
