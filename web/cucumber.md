@@ -18,19 +18,19 @@ Testattavana on yksinkertinen laskuri:
 public class Counter {
    int val = 0;
 
-   public void increase(){
+   public void increase() {
         val++;
    } 
    
-   public void reset(){
+   public void reset() {
         val = 0;
    }    
    
-   public void increment(int a){
+   public void increment(int a) {
         val += a;
    } 
    
-   public int value(){
+   public int value() {
        return val;
    }
 }
@@ -119,9 +119,9 @@ public class Stepdefs {
 Jokaista metodia edeltää annotaatio, joka määrittelee mitä steppiä vastaavasta metodista on kyse. Kaikkien skenaarioiden _Given_-step on sama, se määrittelee että skenaariot alkavat laskurin luomisella
 
 ```java
-    public void counter_is_initialized() throws Throwable {
-        counter = new Counter();
-    }
+public void counter_is_initialized() throws Throwable {
+    counter = new Counter();
+}
 ```
 
 Stepeissä voi olla "parametreja", eli skenaariossa 
@@ -136,13 +136,13 @@ Stepeissä voi olla "parametreja", eli skenaariossa
 määritellyt luvut välitetään niitä vastaaville metodeille 
 
 ```java
-    public void it_is_incremented_by(int val) throws Throwable {
-        counter.increment(val);
-    } 
+public void it_is_incremented_by(int val) throws Throwable {
+    counter.increment(val);
+} 
 
-    public void the_value_should_be(int val) throws Throwable {
-        assertEquals(val, counter.value());
-    }    
+public void the_value_should_be(int val) throws Throwable {
+    assertEquals(val, counter.value());
+}    
 ```
 
 metodien parametrina. Onnistumisen varmistava "Then"-step suorittaa tarkastuksen JUnitin assertEquals-metodia käyttäen.
@@ -162,7 +162,7 @@ Testit suoritetaan komennolla _gradle test_. Huomaa, että testien suorittaminen
 
 Laskimen nollaamiseen liittyvä story on tiedostossa _src/test/resources/ohtu/resetingCounter.feature_
 
-Lisää storyyn seuraavat skenaariot:
+**Lisää storyyn seuraavat skenaariot**:
 
 <pre>
 Feature: As a user I want to be able to set the counter to value zero
