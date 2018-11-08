@@ -8,6 +8,6 @@ Luento [1](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/kalvot
 Luento [2](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/kalvot/luento2.pdf?raw=true)
 
 
-## Laskarit
+## Laskuharjoitukset
 
 [1](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/1.md) [2](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/2.md)
