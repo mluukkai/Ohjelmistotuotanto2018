@@ -3,7 +3,7 @@
 
 Jatketaan viime viikolla aloittamaamme [laskimen](https://github.com/mluukkai/ohtu2017/blob/master/web/riippuvuuksien_injektointi.md) tarkastelua.
 
-Kertaa tarvittaessa nopeasti dokumentti https://github.com/mluukkai/ohtu2017/blob/master/web/riippuvuuksien_injektointi.md 
+Kertaa tarvittaessa nopeasti dokumentti https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/riippuvuuksien_injektointi.md 
 
 Allaolevat koodiesimerkit löytyvät gradle-muotoisina projekteina kurssirepositoriosta (hakemistossa koodi/viikko2)
 
