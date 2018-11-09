@@ -43,11 +43,11 @@ To see more detail about a task, run gradle help --task <task>
 
 Komento listaa käytettävissä olevat _taskit_. Gradlen [dokumentaatio](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html) kuvaa taskeja seuraavasti:
 
-> Each gradle project is made up of one or more tasks. A task represents some atomic piece of work which a build performs. This might be compiling some classes, creating a JAR, generating Javadoc, or publishing some archives to a repository. 
+> Each gradle project is made up of one or more tasks. A task represents some atomic piece of work which a build performs. This might be compiling some classes, creating a JAR, generating Javadoc, or publishing some archives to a repository.
 
 Eli taskit ovat siis "komentoja" joita voimme suorittaa gradle-projekteille.
 
-Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  Saat luotua tiedoston suorittamalla taskin _init_ (eli antamalla komennon _gradle init_). 
+Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  Saat luotua tiedoston suorittamalla taskin _init_ (eli antamalla komennon _gradle init_).
 
 Huomaat että alustuksen jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
 
@@ -60,7 +60,7 @@ drwxr-xr-x   4 mluukkai  ATKK\hyad-all   136 Mar 21 19:44 .gradle
 drwxr-xr-x   3 mluukkai  ATKK\hyad-all   102 Mar 21 19:47 gradle
 -rwxr-xr-x   1 mluukkai  ATKK\hyad-all  5299 Mar 21 19:47 gradlew
 -rw-r--r--   1 mluukkai  ATKK\hyad-all  2260 Mar 21 19:47 gradlew.bat
--rw-r--r--   1 mluukkai  ATKK\hyad-all   586 Mar 21 19:47 settings.gradle 
+-rw-r--r--   1 mluukkai  ATKK\hyad-all   586 Mar 21 19:47 settings.gradle
 </pre>
 
 Näistä hakemisto _.gradle_ kannattaa gitignoroida. Gradle-projekteissa tulee gitignoroida aina myös hakemisto _build_ mihin kaikki gradle taskien generoimat tiedostot sijoitetaan.
@@ -73,7 +73,7 @@ Otetaan nyt käyttöön java-plugin lisäämällä tiedostoon _build.gradle_ riv
 apply plugin: 'java'
 </pre>
 
-**HUOM** Tiedostossa on jo valmiina _kommenteissa_ kaikenlaista hyödyllistä esim. java-pluginin määrittely. 
+**HUOM** Tiedostossa on jo valmiina _kommenteissa_ kaikenlaista hyödyllistä esim. java-pluginin määrittely.
 
 Lisäillään kuitenkin nyt asioita yksi kerrallaan samalla tarkastellen mistä on kysymys.
 
@@ -139,7 +139,7 @@ Description
      Assembles and tests this project.
 </pre>
 
-Eli _build_ suorittaa koodin käännöksen, paketoinnin jar-tiedostoksi sekä suorittaa projektiin liittyvät testit. 
+Eli _build_ suorittaa koodin käännöksen, paketoinnin jar-tiedostoksi sekä suorittaa projektiin liittyvät testit.
 
 Jos haluamme ainoastaan kääntää koodin, riittää taskin _compileJava_ suorittaminen.
 
@@ -147,7 +147,7 @@ Ennen kun siirryt eteenpäin suorita _gradle clean_ joka poistaa kaikki edellise
 
 ## järkevä editori
 
-Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi tekstieditorilla. 
+Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi tekstieditorilla.
 
 Älä käytä nanoa, notepadia tai geditiä vaan ota käyttöön jokin ohjelmointiin suunniteltu editori. Hyviä vaihtoehtoja ovat esim:
 * https://code.visualstudio.com
@@ -165,6 +165,17 @@ alias atom='~/atom-1.15.0-amd64/atom'
 ```
 ja uudelleenkäynnistät terminaalin, voit käynnistää atomin missä vaan komennolla _atom_
 
+Voit myös tehdä Atomille pikakuvakkeen työpöytäympäristöön. Laitoksen koneiden
+oletustyöpöydällä(Cinnamon) se tapahtuu seuraavasti.
+ - Avaa cinnamon-menu-editor, komennolla `cinnamon-menu-editor`.
+ - Paina new item
+  - Aseta Name : Atom
+  - Aseta Command : '~/atom-1.15.0-amd64/atom'
+  - Aseta Comment : A hackable text editor for the 21st century.
+  - kuvakkeen asettaminen on suotavaa.
+
+Muilla työpöydillä työvaiheet ovat erilaiset, mutta varmasti onnistuu mm.
+KDE ja Gnome työpöydillä.
 ## Koodin lisääminen projektiin
 
 Gradle olettaa, että ohjelman koodi sijaitsee projektin juuren alla hakemistossa _src/main/java_. Luo hakemisto(t) ja tiedosto _src/main/java/Main.java_ ja sille esim. seuraava sisältö:
@@ -231,7 +242,7 @@ jar {
 }
 </pre>
 
-Palaa nyt projektihakemistoon ja suorita jar-tiedoston generoiva taski _jar_ (eli komento _gradle _jar). 
+Palaa nyt projektihakemistoon ja suorita jar-tiedoston generoiva taski _jar_ (eli komento _gradle _jar).
 
 Voit suorittaa syntyneen jar-tiedoston seuraavasti (huomaa että tiedoston nimi riippuu hakemistosi nimestä ja todennäköisesti ei ole _HelloGradle.jar_):
 
@@ -244,7 +255,7 @@ Hello gradle!
 
 Aiemmissa tehtävissä olemme pystyneet suorittamaan koodin myös komennolla _gradle run_. Komento aiheuttaa kuitenkin nyt virheilmoituksen _Task 'run' not found in root project_.
 
-Syynä tälle on se, että taski _run_ ei ole java-pluginin vaan [application-pluginin](https://docs.gradle.org/current/userguide/application_plugin.html) määrittelemä. Otetaan käyttöön myös application plugin lisäämällä tiedostoon _build.gradle_ rivi 
+Syynä tälle on se, että taski _run_ ei ole java-pluginin vaan [application-pluginin](https://docs.gradle.org/current/userguide/application_plugin.html) määrittelemä. Otetaan käyttöön myös application plugin lisäämällä tiedostoon _build.gradle_ rivi
 
 <pre>
 apply plugin: 'application'
@@ -324,7 +335,7 @@ Exception in thread "main" java.util.NoSuchElementException: No line found
 FAILURE: Build failed with an exception.
 </pre>
 
-Syynä tälle on se, että oletusarvoisesti gradlen _run_-task ei liitä terminaalia systeein "inputvirtaan". Asia saadaan korjautumaan lisäämällä tiedostoon _build.gradle_ seuraava: 
+Syynä tälle on se, että oletusarvoisesti gradlen _run_-task ei liitä terminaalia systeein "inputvirtaan". Asia saadaan korjautumaan lisäämällä tiedostoon _build.gradle_ seuraava:
 
 <pre>
 run {
@@ -332,7 +343,7 @@ run {
 }
 </pre>
 
-Nyt komento _gradle run_ toimii. 
+Nyt komento _gradle run_ toimii.
 
 ## toinen luokka
 
@@ -424,7 +435,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 </pre>
 
-JUnit-kirjasto on siis ohjelmamme testien käännösaikainen _riippuvuus_. 
+JUnit-kirjasto on siis ohjelmamme testien käännösaikainen _riippuvuus_.
 
 ## riippuvuudet
 
@@ -446,7 +457,7 @@ Ensimmäinen osa _repositories_ kertoo gradlelle mistä sen tulee etsiä riippuv
 
 Toinen osa määrittelee, että _testCompile_-vaiheeseen otetaan käyttöön JUnit-kirjaston versio 4.12. Käytännössä tämä tarkoittaa että kääntäessään testien koodia gradle liittää JUnitin _classpathiin_.
 
-Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii. 
+Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii.
 
 Rikotaan vielä testi ja varmistetaan että junit huomaa virheen.
 
