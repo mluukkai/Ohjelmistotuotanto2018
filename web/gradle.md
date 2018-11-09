@@ -439,7 +439,6 @@ repositories {
 
 dependencies {
     testCompile 'junit:junit:4.12'
-    compile 'junit:junit:4.12'
 }
 </pre>
 
