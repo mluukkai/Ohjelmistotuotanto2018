@@ -1,3 +1,4 @@
+Viikko 2
 Tehty muutos
 # Ohjelmistotuotanto syksy 2018, Tietojenkäsittelytieteen laitos, Helsingin yliopisto
 
