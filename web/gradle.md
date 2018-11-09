@@ -149,21 +149,7 @@ Ennen kun siirryt eteenpäin suorita _gradle clean_ joka poistaa kaikki edellise
 
 Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi tekstieditorilla. 
 
-Älä käytä nanoa, notepadia tai geditiä vaan ota käyttöön jokin ohjelmointiin suunniteltu editori. Hyviä vaihtoehtoja ovat esim:
-* https://code.visualstudio.com
-* https://atom.io
-* https://www.sublimetext.com
-
-Laitoksen koneilla ei valitettavasti ole mitään järkevää editoria. Voit asentaa Atomin laitoksen koneelle seuraavasti
-* mene esim. kotihakemistoosi (komennolla cd)
-* lataa atom komennolla _wget https://github.com/atom/atom/releases/download/v1.15.0/atom-amd64.tar.gz_
-* pura paketti komennolla _tar -xf atom-amd64.tar.gz_
-* editorin voi nyt käynnistää komennolla _~/atom-1.15.0-amd64/atom_
-* jos lisäät kotihakemistossasi olevaan tiedostoon _.bashrc_ seuraavan rivin
-```bash
-alias atom='~/atom-1.15.0-amd64/atom'
-```
-ja uudelleenkäynnistät terminaalin, voit käynnistää atomin missä vaan komennolla _atom_
+Hyvä vaihtoehto on laitoksen koneilta ja fuksiläppäreilt löytyvä [Visual Studio Code](https://code.visualstudio.com)
 
 ## Koodin lisääminen projektiin
 
