@@ -1,13 +1,15 @@
 package ohtu;
 
+import javafx.application.Application;
 import ohtu.verkkokauppa.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class Main {
 
     public static void main(String[] args) {
-        var kirjanpito = new Kirjanpito();
-        Kauppa kauppa = new Kauppa(new Varasto(kirjanpito), new Pankki(kirjanpito), new Viitegeneraattori());
-
+        ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
+        var kauppa = ctx.getBean(Kauppa.class);
         // kauppa hoitaa yhden asiakkaan kerrallaan seuraavaan tapaan:
         kauppa.aloitaAsiointi();
         kauppa.lisaaKoriin(1);
@@ -23,6 +25,8 @@ public class Main {
         }
 
         kauppa.tilimaksu("Arto Vihavainen", "3425-1652");
+
+        var kirjanpito = ctx.getBean(Kirjanpito.class);
 
         // kirjanpito
         for (String tapahtuma : kirjanpito.getTapahtumat()) {
