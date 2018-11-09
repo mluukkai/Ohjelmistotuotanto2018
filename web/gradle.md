@@ -450,4 +450,4 @@ Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii.
 
 Rikotaan vielä testi ja varmistetaan että junit huomaa virheen.
 
-JUnitisita on pitkän odotuksen jälkeen ilmestynyt JUnitin uusi versio [JUnit5](http://junit.org/junit5/) on ilmestynyt vuosien odotuksen jälkeen tämän vuoden syyskuussa. JUnit5:ssä on monia mielenkiintoisia uudistuksia, mutta valitettavasti työkalutuki on tässä vaiheessa vielä niin kesken, että joudumme kurssilla käyttämään vielä vanhaa JUnitia.
+JUnitista on pitkän odotuksen jälkeen ilmestynyt JUnitin uusi versio [JUnit5](http://junit.org/junit5/) on ilmestynyt vuosien odotuksen jälkeen tämän vuoden syyskuussa. JUnit5:ssä on monia mielenkiintoisia uudistuksia, mutta valitettavasti työkalutuki on tässä vaiheessa vielä niin kesken, että joudumme kurssilla käyttämään vielä vanhaa JUnitia.
