@@ -15,5 +15,4 @@ public class Submission {
     public String toString() {
         return ""+week;
     }
-    
 }
