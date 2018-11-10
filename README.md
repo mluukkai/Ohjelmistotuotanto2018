@@ -15,4 +15,5 @@
 
 ## Kehitysehdotukset
 1. Kaikkien luentojen videointi ja tallennus -> pystyisi osallistumaan
+2. Hyvin avaava viikko noita @Autowired ja @Component annotaatiota sekä gitin toiminnallisuuksia.
 
