@@ -1,4 +1,4 @@
-❄ Hei maailma 🏔
+❄ Hei 🏔
 
 # Ohjelmistotuotanto syksy 2018, Tietojenkäsittelytieteen laitos, Helsingin yliopisto
 
