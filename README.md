@@ -1,4 +1,4 @@
-SUuriA MUUTOKsiA
+SUuriA MUUTOKsiA ja lisää
 
 # Ohjelmistotuotanto syksy 2018, Tietojenkäsittelytieteen laitos, Helsingin yliopisto
 
