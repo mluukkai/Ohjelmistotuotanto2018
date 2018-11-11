@@ -1,1 +1,1 @@
-Tässä on muutostiedosto pushattavaksi GitHubiin.
+Tässä on viikon 2 teksti pull requestia varten.
