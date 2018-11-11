@@ -12,4 +12,4 @@
 [1](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/1.md) [2](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/2.md)
 
 # Forkattu versio
-tehtävät tehty
+viikon 2 tehtävät tehty
