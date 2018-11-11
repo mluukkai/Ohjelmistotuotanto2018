@@ -1,5 +1,5 @@
 # Forkattu Ohjelmistotuotanto syksy 2018, Tietojenkäsittelytieteen laitos, Helsingin yliopisto
-
+Muokkaus 11.11.2018 klo 16.36 by Kukkis
 <https://github.com/mluukkai/ohjelmistotuotanto2018/wiki/Ohjelmistotuotanto-syksy-2018>
 
 ## Luentokalvot
