@@ -3,19 +3,19 @@ package ohtu;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import ohtu.verkkokauppa.Kirjanpito;
+import ohtu.verkkokauppa.Varasto;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        
-
 //        Kauppa kauppa = new Kauppa(varasto, pankki, viitegen);
 
         ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
- 
-        Kirjanpito kirjanpito = ctx.getBean(Kirjanpito.class);
-//        Varasto varasto = new Varasto(kirjanpito);
+// 
+//        Kirjanpito kirjanpito = ctx.getBean(Kirjanpito.class);
+//        KirjanpitoRajapinta kirjanpito = ctx.getBean(Kirjanpito.class);
+        Varasto varasto =  ctx.getBean(Varasto.class);
 //        Pankki pankki = ctx.getBean(Pankki.class);
 //        Viitegeneraattori viitegen = new Viitegeneraattori();
         

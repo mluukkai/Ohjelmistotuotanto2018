@@ -4,10 +4,10 @@ import java.util.*;
 
 public class Varasto implements VarastoRajapinta {
 
-    private Kirjanpito kirjanpito;
+    private KirjanpitoRajapinta kirjanpito;
     private HashMap<Tuote, Integer> saldot;  
     
-    public Varasto(Kirjanpito kp) {
+    public Varasto(KirjanpitoRajapinta kp) {
         kirjanpito = kp;
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
