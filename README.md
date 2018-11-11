@@ -11,4 +11,4 @@
 
 [1](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/1.md) [2](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/2.md)
 
-This line is new (week 1). And here's week 2 (updated for second review).
+This line is new (week 1). And here's week 2 (updated for second review). And week 3.
