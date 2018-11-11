@@ -22,7 +22,7 @@ public class Main {
 //        Pankki pankki = ctx.getBean(Pankki.class);
 //        Viitegeneraattori viitegen = new Viitegeneraattori();
         
-        Kauppa kauppa = ctx.getBean(Kauppa.class);
+        Kauppa kauppa = (Kauppa) ctx.getBean("kauppa");
 //        
 //         kauppa hoitaa yhden asiakkaan kerrallaan seuraavaan tapaan:
         kauppa.aloitaAsiointi();
