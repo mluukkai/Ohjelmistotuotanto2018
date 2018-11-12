@@ -160,7 +160,7 @@ Testit suoritetaan komennolla _gradle test_. Huomaa, että testien suorittaminen
 
 ## nollaamisen skenaariot
 
-Laskimen nollaamiseen liittyvä story on tiedostossa _src/test/resources/ohtu/resetingCounter.feature_
+Laskimen nollaamiseen liittyvä story on tiedostossa _src/test/resources/ohtu/resetingCounter.feature_.
 
 **Lisää storyyn seuraavat skenaariot**:
 
