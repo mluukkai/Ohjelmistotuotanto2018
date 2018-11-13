@@ -147,7 +147,7 @@ public void the_value_should_be(int val) throws Throwable {
 
 metodien parametrina. Onnistumisen varmistava "Then"-step suorittaa tarkastuksen JUnitin assertEquals-metodia käyttäen.
 
-Cucumber edellyttää vielä pienen määrän konfiguraatiota, joka on tehty tiedostossa _src/.../RunCukesTest.java_. Konfiguraatio on yksinkertainen, se määrittelee testit suoritettavaksi [JUnit-testien suorituksen yhteydessä](https://cucumber.io/docs/reference/jvm#junit-runner) ja että testien tulos raportoidaan [komentorivillä](https://cucumber.io/docs/reference#pretty):
+Cucumber edellyttää vielä pienen määrän konfiguraatiota, joka on tehty tiedostossa _src/.../RunCukesTest.java_. Konfiguraatio on yksinkertainen, se määrittelee testit suoritettavaksi [JUnit-testien suorituksen yhteydessä](https://docs.cucumber.io/cucumber/api/#junit) ja että testien tulos raportoidaan [komentorivillä](https://cucumber.io/docs/reference#pretty):
 
 ```java
 @RunWith(Cucumber.class)
