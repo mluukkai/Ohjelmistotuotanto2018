@@ -42,7 +42,7 @@ Laskurin haluttua toimintaa kuvaavat seuraavat user storyt
 * As a user I want to be able to increase the counter value
 * As a user I want to be able to set the counter to value zero  
 
-Cucumberissa (ja muutamassa muussakin BDD-työkaluissa) vaatimukset ilmaistaan [Gherkin](https://cucumber.io/docs/reference#gherkin)-formaatissa. User storya vastaava asia on _Feature_. Laskimen Storyt voidaan ilmaista seuraavasti:
+Cucumberissa (ja muutamassa muussakin BDD-työkaluissa) vaatimukset ilmaistaan [Gherkin](https://docs.cucumber.io/gherkin/)-formaatissa. User storya vastaava asia on _Feature_. Laskimen Storyt voidaan ilmaista seuraavasti:
 
 <pre>
 Feature: As a user I want to be able to increase the counter value
