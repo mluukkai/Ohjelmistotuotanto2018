@@ -6,7 +6,7 @@
 
 Luento [1](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/kalvot/luento1.pdf?raw=true) 
 Luento [2](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/kalvot/luento2.pdf?raw=true)
-
+Loput luennoista ei ole internetissä.
 
 ## Laskuharjoitukset
 
