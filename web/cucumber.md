@@ -42,7 +42,7 @@ Laskurin haluttua toimintaa kuvaavat seuraavat user storyt
 * As a user I want to be able to increase the counter value
 * As a user I want to be able to set the counter to value zero  
 
-Cucumberissa (ja muutamassa muussakin BDD-työkaluissa) vaatimukset ilmaistaan [Gherkin](https://cucumber.io/docs/reference#gherkin)-formaatissa. User storya vastaava asia on _Feature_. Laskimen Storyt voidaan ilmaista seuraavasti:
+Cucumberissa (ja muutamassa muussakin BDD-työkaluissa) vaatimukset ilmaistaan [Gherkin](https://docs.cucumber.io/gherkin/)-formaatissa. User storya vastaava asia on _Feature_. Laskimen Storyt voidaan ilmaista seuraavasti:
 
 <pre>
 Feature: As a user I want to be able to increase the counter value
@@ -147,7 +147,7 @@ public void the_value_should_be(int val) throws Throwable {
 
 metodien parametrina. Onnistumisen varmistava "Then"-step suorittaa tarkastuksen JUnitin assertEquals-metodia käyttäen.
 
-Cucumber edellyttää vielä pienen määrän konfiguraatiota, joka on tehty tiedostossa _src/.../RunCukesTest.java_. Konfiguraatio on yksinkertainen, se määrittelee testit suoritettavaksi [JUnit-testien suorituksen yhteydessä](https://cucumber.io/docs/reference/jvm#junit-runner) ja että testien tulos raportoidaan [komentorivillä](https://cucumber.io/docs/reference#pretty):
+Cucumber edellyttää vielä pienen määrän konfiguraatiota, joka on tehty tiedostossa _src/.../RunCukesTest.java_. Konfiguraatio on yksinkertainen, se määrittelee testit suoritettavaksi [JUnit-testien suorituksen yhteydessä](https://docs.cucumber.io/cucumber/api/#junit) ja että testien tulos raportoidaan komentorivillä [`pretty`-formatterin](https://docs.cucumber.io/cucumber/reporting/) avulla:
 
 ```java
 @RunWith(Cucumber.class)
