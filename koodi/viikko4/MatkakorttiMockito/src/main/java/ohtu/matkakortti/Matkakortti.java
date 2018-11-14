@@ -1,5 +1,6 @@
 package ohtu.matkakortti;
 
+// ÄLÄ MUUTA TÄMÄN LUOKAN KOODIA
 public class Matkakortti {
 
     private int saldo;

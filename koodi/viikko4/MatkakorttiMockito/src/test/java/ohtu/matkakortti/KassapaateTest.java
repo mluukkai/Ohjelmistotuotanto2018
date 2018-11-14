@@ -1,5 +1,5 @@
 
-package ohtu.lyyrakortti;
+package ohtu.matkakortti;
 
 import ohtu.matkakortti.Matkakortti;
 import ohtu.matkakortti.Kassapaate;
@@ -40,4 +40,5 @@ public class KassapaateTest {
         verify(kortti, times(1)).getSaldo();
         verify(kortti, times(0)).osta(anyInt());
     }
+      
 }
