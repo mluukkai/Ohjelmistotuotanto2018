@@ -4,7 +4,7 @@ Cucumberilla tehtävät testit lasketaan kuuluvaksi [Behavior-driven development
 
 Vaikka Cucumber on varsinaisesti tarkoitettu koko ohjelmiston "end-to-end"-testaukseen, tarkastellaan ensin Cucumberin käyttöä yksittäisen luokan testaamiseen.
 
-Hae kurssirepositorion hakemistossa [koodi/viikko3/HelloCucumber](https://github.com/mluukkai/ohjelmistotuotanto2017/tree/master/koodi/viikko3/HelloCucumber) oleva NetBeans-projekti. 
+Hae kurssirepositorion hakemistossa [koodi/viikko3/HelloCucumber](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko3/HelloCucumber) oleva NetBeans-projekti. 
 
 NetBeansiin kannattaa asentaa [täältä](http://plugins.netbeans.org/plugin/43852/cucumber-features) löytyvä Cucumber-plugin. Pluginia ei ole päivitetty aikoihin, mutta se näyttää toimivan vähintään siedettävästi ainakin NetBeans 8.2:llä. Pluginin asennus tapahtuu klikkaamalla [pluginin sivulta](http://plugins.netbeans.org/plugin/43852/cucumber-features) nappia download, ja valitsemalla NetBeansin valikosta _tools_, _plugins_ ja avautuvasta dialogista _downloaded_, _add plugin_ ja etsimällä ladattu tiedosto:
 
