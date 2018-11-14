@@ -187,7 +187,7 @@ $ java Main
 Hello gradle!
 </pre>
 
-Yleensä java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon 1 [tehtävän 7](https://github.com/mluukkai/ohjelmistotuotanto2017/blob/master/laskarit/1.md#7-gradle) tapaan.
+Yleensä java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon 1 [tehtävän 7](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/1.md#7-gradle) tapaan.
 
 Jar-tiedosto muodostetaan gradlen taskilla jar. Help kertoo seuraavaa:
 
