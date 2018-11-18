@@ -2,4 +2,4 @@
 
 <https://github.com/mluukkai/ohjelmistotuotanto2018/wiki/Ohjelmistotuotanto-syksy-2018>
 
-# Laskareiden 2 palautus
+# Laskareiden 3 palaute
