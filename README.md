@@ -9,4 +9,5 @@
 
 ## Laskarit
 
-[1](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/1.md) [2](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/2.md)
+[1](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/1.md) [2](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/2.md) [3]
+(https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/3.md)
