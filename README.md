@@ -11,8 +11,11 @@
 
 <<<<<<< HEAD
 [1](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/1.md) [2](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/2.md)
+<<<<<<< HEAD
 
 
 =======
 [1](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/1.md) [2](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/2.md) [3](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/3.md) [4](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/4.md) [5](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/5.md)
 >>>>>>> 426d577bcf15037d45f47acd4eeb66e6be69fcb3
+=======
+>>>>>>> 8326ab1587861c193445195831e2ad6d6578ab83
