@@ -2146,7 +2146,7 @@ Esim. Javalla tehdyissä käyttöliittymäsovelluksissa painikkeiden klikkailuun
 
 Koska kontrollerit hoitavat käyttöliittymäspesifejä tehtäviä kuten painikkeisiin reagoimista, niiden ajatellaan esim. kerrosarkkitehtuurista puhuttaessa liittyvän käyttöliittymäkerrokseen. 
 
-Teemme nyt erittäin yksinkertaisen MVC-periaatetta noudattavan sovelluksen käyttäen Javan Swing-käyttöliittymäkirjastoa. Jos suoritut Ohjelmoinnin jatkokurssin kevään  2017 jälkeen ei Swing ole välttämättä tuttu sillä kurssi käytti käyttöliittymäkirjastona Java FX:ää. Periaatteet ovat kuitenkin samat. 
+Teemme nyt erittäin yksinkertaisen MVC-periaatetta noudattavan sovelluksen käyttäen Javan FX -käyttöliittymäkirjastoa. 
 
 Sovelluslogiikka on seuraavassa:
 
@@ -2173,73 +2173,100 @@ public class Sovelluslogiikka {
 
 Eli sovelluksella voi arpoa lukuja koko ajan uusia lukuja. Sovelluslogiikka muistaa kaikki arpomansa luvut.
 
-Näytössä on painike, jolla pyydetään uuden luvun arpomista sekä tekstikenttä, missä arvotut luvut näytetään:
+Näkymässä on painike, jolla pyydetään uuden luvun arpomista sekä tekstikenttä, missä arvotut luvut näytetään:
 
 
 ``` java
-public class Naytto extends JFrame {
 
-    private JButton nappi;
-    private JTextArea teksti;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 
-    public Naytto() {
-        setLayout(new GridLayout(2, 1));
-        teksti = new JTextArea(1, 80);
-        teksti.setText("[]");
-        nappi = new JButton("uusi");
-        add(teksti);
-        add(nappi);
-
-        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+public class Nakyma extends Pane {
+    private Button nappi;
+    private Label teksti;
+    
+    public Nakyma() {
+        super();
+        
+        VBox box = new VBox(10);
+        teksti  = new Label("[]");       
+        nappi = new Button("uusi");          
+             
+        box.getChildren().addAll(teksti, nappi);   
+        
+        getChildren().add(box);
     }
-
+      
     public void update(String sisalto){
         teksti.setText(sisalto);
     }
 
-    public void asetaKontrolleri(ActionListener listener){
-        nappi.addActionListener(listener);
+    public void asetaKontrolleri(EventHandler listener){
+        nappi.setOnAction(listener);
     }
 }
 ```
 
-Näyttö on täysin passiivinen, se ei sisällä edes tapahtumakuuntelijaa joka on MVC:n hengen mukaisesti laitettu kontrolleriin:
+Näkymä on täysin passiivinen, se ei sisällä edes tapahtumakuuntelijaa joka on MVC:n hengen mukaisesti laitettu kontrolleriin:
 
 
 ``` java
-public class Kontrolleri implements ActionListener {
-    private Naytto naytto;
-    private Sovelluslogiikka model;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 
-    public Kontrolleri(Naytto naytto, Sovelluslogiikka model) {
-        this.naytto = naytto;
-        this.model = model;
-        naytto.asetaKontrolleri(this);
+public class Kontrolleri implements EventHandler {
+    private Sovelluslogiikka logiikka;
+    private Nakyma nakyma;
+    
+    public Kontrolleri(Nakyma nakyma, Sovelluslogiikka logiikka) {
+        this.logiikka = logiikka;
+        this.nakyma = nakyma;
+        this.nakyma.asetaKontrolleri(this);
+    }
+     
+    @Override
+    public void handle(Event event) {
+        logiikka.arvoLuku();
+        String dataNaytolle = logiikka.getLuvut().toString();
+        nakyma.update( dataNaytolle );
     }
 
-    public void actionPerformed(ActionEvent ae) {
-        model.arvoLuku();
-        String dataNaytolle = model.getLuvut().toString();
-        naytto.update( dataNaytolle );
-    }
 }
 ```
 
 Kontrolleri tuntee _näytön_ ja sovelluslogiikan eli _modelin_. Konstruktorissa kontrolleri asettaa itsensä tapahtumakuuntelijaksi näytössä olevalle painikkeelle.
 
-Kun nappia painetaan, eli metodin _actionPerformed_ suorituksen yhteydessä kontrolleri pyytää modelia arpomaan uuden luvun. Sen jälkeen kontrolleri hakee luvut modelilta ja asettaa ne tekstimuoisena näytölle käyttäen näytön update-metodia.
+Kun nappia painetaan, eli metodin _handle_ suorituksen yhteydessä kontrolleri pyytää modelia arpomaan uuden luvun. Sen jälkeen kontrolleri hakee luvut modelilta ja asettaa ne tekstimuoisena näytölle käyttäen näytön update-metodia.
 
 Itse sovellus ainoastaan luo oliot ja antaa näytön sekä modelin kontrollerille:
 
 ``` java
-public class MVCSovellus {
+public class FxMVC extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        VBox pane = new VBox();
+            
+        Sovelluslogiikka logiikka = new Sovelluslogiikka();
+        
+        Nakyma nakyma = new Nakyma();
+        Kontrolleri k = new Kontrolleri(nakyma, logiikka);
+        pane.getChildren().add(nakyma);          
+  
+        Scene scene = new Scene(pane, 300, 250);
+        
+        primaryStage.setTitle("MVC example app");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
-    public void kaynnista() {
-        Naytto naytto = new Naytto();
-        Sovelluslogiikka model = new Sovelluslogiikka();
-        Kontrolleri kontrolleri = new Kontrolleri(naytto, model);
+    public static void main(String[] args) {
+        launch(args);
     }
 }
 ```
@@ -2250,22 +2277,33 @@ Rakenne luokkakaaviona:
 
 Model eli sovelluslogiikka on nyt täysin tietämätön siitä kuka sen kutsuu. 
 
-Päätämme lisätä ohjelmaan useampia näyttöjä, joille kaikille tulee oma kontrolleri.
+Päätämme lisätä ohjelmaan useampia näyttöjä, joille kaikille tulee oma kontrolleri:
 
 ``` java
-public class MVCSovellus2 {
-
-    public void kaynnista() {
-        Sovelluslogiikka model = new Sovelluslogiikka();
+public class FxMVC extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) {
+        VBox pane = new VBox();
+            
+        Sovelluslogiikka logiikka = new Sovelluslogiikka();
+        
         for (int i = 0; i < 3; i++) {
-            luoNaytto(model);
+            Nakyma nakyma = new Nakyma();
+            Kontrolleri k = new Kontrolleri(nakyma, logiikka);
+            pane.getChildren().add(nakyma);          
         }
+  
+        Scene scene = new Scene(pane, 300, 250);
+        
+        primaryStage.setTitle("MVC example app");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
-    private void luoNaytto(Sovelluslogiikka model) {
-        Naytto naytto = new Naytto();
-        Kontrolleri kontrolleri = new Kontrolleri(naytto, model);
-    }
+    public static void main(String[] args) {
+        launch(args);
+    } 
 }
 ```
 
@@ -2362,30 +2400,31 @@ Sovelluslogiikalla ei nyt ole konkreettista riippuvuutta mihinkään tarkkailija
 Kontrolleri muuttuu seuraavasti:
 
 ``` java
-public class Kontrolleri implements ActionListener, Observer {
-    private Naytto naytto;
-    private Sovelluslogiikka model;
-
-    public Kontrolleri(Naytto naytto, Sovelluslogiikka model) {
-        this.naytto = naytto;
-        this.model = model;
-        naytto.asetaKontrolleri(this);
-        model.addObserver(this);
+public class Kontrolleri implements EventHandler, Observer {
+    private Sovelluslogiikka logiikka;
+    private Nakyma nakyma;
+    
+    public Kontrolleri(Nakyma nakyma, Sovelluslogiikka logiikka) {
+        this.logiikka = logiikka;
+        this.nakyma = nakyma;
+        this.nakyma.asetaKontrolleri(this);
+        this.logiikka.addObserver(this);
     }
-
-    public void actionPerformed(ActionEvent ae) {
-        model.arvoLuku();
-        model.notifyObservers();
+     
+    @Override
+    public void handle(Event event) {
+        logiikka.arvoLuku();
+        logiikka.notifyObservers();
     }
 
     public void update() {
-        String dataNaytolle = model.getLuvut().toString();
-        naytto.update( dataNaytolle );
-    }
+        String dataNaytolle = logiikka.getLuvut().toString();
+        nakyma.update(dataNaytolle);
+    }    
 }
 ```
 
-Kontrolleri toimii tarkkailijana eli toteuttaa rajapinnan _Observer_. Kun nappia painetaan, eli _actionPerformed_-metodissa, kontrolleri pyytää modelia arpomaan uuden luvun ja samalla pyytää modelia ilmoittamaan tarkkailijoille muuttuneen arvon.
+Kontrolleri toimii tarkkailijana eli toteuttaa rajapinnan _Observer_. Kun nappia painetaan, eli _handle_-metodissa, kontrolleri pyytää modelia arpomaan uuden luvun ja samalla pyytää modelia ilmoittamaan tarkkailijoille muuttuneen arvon.
 
 _update_-metodia kutsuttaessa (jota siis sovelluslogiikka kutsuu kun sen tila muuttuu) hakee kontrolleri sovelluslogiikan uuden tilan ja suorittaa hallinnoimansa näytön päivityksen.
 
