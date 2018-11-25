@@ -1,6 +1,6 @@
 # Ohjelmistotuotanto syksy 2018, Tietojenkäsittelytieteen osasto, Helsingin yliopisto
 
-## edit
+## edit 2
 
 <https://github.com/mluukkai/ohjelmistotuotanto2018/wiki/Ohjelmistotuotanto-syksy-2018>
 
