@@ -1,11 +1,11 @@
 Tämä materiaali on tarkoitettu itseopiskeltavaksi ennen viikon 5, 6 ja 7 laskarien tekemistä. Materiaali täydentää [luennon 8](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/kalvot/luento8.pdf?raw=true)
 asiaa.
 
-## koheesio
+## Koheesio
 
 Koheesiolla tarkoitetaan sitä, kuinka pitkälle metodissa, luokassa tai komponentissa oleva ohjelmakoodi on keskittynyt tietyn toiminnallisuuden toteuttamiseen. Hyvänä asiana pidetään mahdollisimman korkeaa koheesion astetta. Koheesioon tulee siis pyrkiä kaikilla ohjelman tasoilla, metodeissa, luokissa, komponenteissa ja jopa muuttujissa (samaa muuttujaa ei saa uusiokäyttää eri asioiden tallentamiseen). 
 
-## koheesio metoditasolla
+## Koheesio metoditasolla
 
 Esimerkki artikkelista [http://www.ibm.com/developerworks/java/library/j-eaed4/index.html](http://www.ibm.com/developerworks/java/library/j-eaed4/index.html)
 
@@ -495,7 +495,7 @@ Tili euribor12 = Tili.luoEuriborTili("4422-3355", "Tero Huomo", 12 );
 Tili fyrkka = Tili.luoEuriborTili("7895-4571", "Esko Ukkonen", 10.75 );
 ```
 
-### factory
+### Factory
 
 Käyttämämme periaate olioiden luomiseen staattisten metodien avulla on hyvin tunnettu suunnittelumalli *staattinen tehdasmetodi, engl. static factory method*.
 
@@ -521,7 +521,7 @@ määräaikais.vaihdaKorkoa(new EuriborKorko(3));
 
 Eli luopumalla perinnästä selkeytyy oliorakenne huomattavasti ja saavutetaan ajonaikaista joustavuuttaa (koronlaskutapa) joka perintää käyttämällä ei onnistu.
 
-### strategy
+### Strategy
 
 Tekniikka jolla koronmaksu hoidetaan on myöskin suunnittelumalli nimeltään *strategia* eli *englanniksi strategy*. 
 
@@ -853,7 +853,7 @@ Ohjelman rakenne tässä vaiheessa
 ![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-5.png)
 
 
-### command
+### Command
 
 Eristämme siis jokaiseen erilliseen laskuoperaatioon liittyvä toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa nodattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public <code>void suorita()</code>
 
@@ -1072,15 +1072,15 @@ Luokalla on kolme metodia, kaikki kirjan rivit palauttava <code>rivit</code> sek
 
 Luokkaa käytetään seuraavasti:
 
-``` java
-    public static void main(String[] args) {
-        String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
-        GutenbergLukija kirja = new GutenbergLukija(osoite);
+```java
+public static void main(String[] args) {
+    String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
+    GutenbergLukija kirja = new GutenbergLukija(osoite);
 
-        for( String rivi : kirja.rivitJoillaSana("beer") ) {
-            System.out.println(rivi)
-        }
+    for( String rivi : kirja.rivitJoillaSana("beer") ) {
+        System.out.println(rivi)
     }
+}
 ```
 
 Tutustutaan tehtävässä hieman [Java 8:n](http://docs.oracle.com/javase/8/docs/api/) tarjoamiin uusiin ominaisuuksiin. Monelle Java 8 on jo tuttu Ohjelmoinnin perusteiden ja jatkokurssin uudemmista versiosta.
@@ -1088,18 +1088,18 @@ Tutustutaan tehtävässä hieman [Java 8:n](http://docs.oracle.com/javase/8/docs
 Voimme korvata listalla olevien merkkijonojen tulostamisen kutsumalla listoilla (tarkemmin sanottuna rajapinnan [Interable](http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)-toteuttavilla) olevaa metodia <code>forEach</code> joka mahdollistaa listan alkioiden läpikäynnin "funktionaaliseen" tyyliin. Metodi saa parametrikseen "functional interfacen" (eli rajapinnan, joka määrittelee ainoastaan yhden toteutettavan metodin) toteuttavan olion. Tälläisiä ovat Java 8:ssa myös ns. lambda-lausekkeet (lambda expression), joka tarkoittaa käytännössä anonyymia mihinkään luokkaan liittymätöntä metodia.  Seuraavassa metodin palauttavien kirjan rivien tulostus forEachia ja lambdaa käyttäen:
 
 ``` java
-    public static void main(String[] args) {
-        String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
-        GutenbergLukija kirja = new GutenbergLukija(osoite);
+public static void main(String[] args) {
+    String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
+    GutenbergLukija kirja = new GutenbergLukija(osoite);
 
-        kirja.rivitJoillaSana("beer").forEach(s->System.out.println(s));
-    }
+    kirja.rivitJoillaSana("beer").forEach(s->System.out.println(s));
+}
 ```
 
 Esimerkissä lambdan syntaksi oli seuraava:
 
 ``` java
-    s->System.out.println(s)
+s -> System.out.println(s)
 ```
 
 parametri <code>s</code> saa arvokseen yksi kerrallaan kunkin läpikäytävän tekstirivin. Riveille suoritetaan "nuolen" oikealla puolella oleva tulostuskomento. Lisää lambdan syntaksista [täältä](http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html). Huomionarvoista on se, että lambdan parametrin eli muuttujan <code>s</code> tyyppiä ei tarvitse määritellä, kääntäjä osaa päätellä sen iteroitavana olevan kokoelman perusteella.
@@ -1138,16 +1138,16 @@ public class SisaltaaSanan implements Ehto {
 Jos luokasta luodaan ilmentymä
 
 ``` java
-    Ehto ehto = new SisaltaaSanan("olut");
+Ehto ehto = new SisaltaaSanan("olut");
 ```
 
 voidaan luokan avulla tarkastella sisältävätkö merkkijonot sanan _olut_:
 
 
 ``` java
-    Ehto ehto = new SisaltaaSanan("olut");
-    ehto.test("internetin paras suomenkielinen olutsivusto on olutopas.info");
-    ehto.test("Java 8 ilmestyi 18.3.2014");
+Ehto ehto = new SisaltaaSanan("olut");
+ehto.test("internetin paras suomenkielinen olutsivusto on olutopas.info");
+ehto.test("Java 8 ilmestyi 18.3.2014");
 ```
 
 Ensimmäinen metodikutsuista palauttaisi _true_ ja jälkimäinen _false_.
@@ -1187,9 +1187,9 @@ Käytännössä siis määrittelemme "lennossa" rajapinnan <code>Ehto</code> tot
 Lambdojen avulla on helppoa määritellä mielivaltaisia ehtoja. Seuraavassa tulostetaan kaikki rivit, joilla esiintyy jompi kumpi sanoista _beer_ tai _vodka_. Ehdon ilmaiseva lambda-lauseke on nyt määritelty selvyyden vuoksi omalla rivillään:
 
 ``` java
-    Ehto ehto = s -> s.contains("beer") || s.contains("vodka");
+Ehto ehto = s -> s.contains("beer") || s.contains("vodka");
 
-    kirja.rivitJotkaTayttavatEhdon(ehto).forEach(s->System.out.println(s));
+kirja.rivitJotkaTayttavatEhdon(ehto).forEach(s->System.out.println(s));
 ```
 
 Voimme hyödyntää Java 8:n uusia piirteitä myös luokan <code>GutenbergLukija</code> metodissa <code>rivitJotkaTayttavatEhdon</code>.
@@ -1197,17 +1197,17 @@ Voimme hyödyntää Java 8:n uusia piirteitä myös luokan <code>GutenbergLukija
 Metodi on tällä hetkellä seuraava:
 
 ``` java
-    public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
-        List<String> palautettavatRivit = new ArrayList<>();
+public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
+    List<String> palautettavatRivit = new ArrayList<>();
 
-        for (String rivi : rivit) {
-            if (ehto.test(rivi)) {
-                palautettavatRivit.add(rivi);
-            }
+    for (String rivi : rivit) {
+        if (ehto.test(rivi)) {
+            palautettavatRivit.add(rivi);
         }
-
-        return palautettavatRivit;
     }
+
+    return palautettavatRivit;
+}
 ```
 
 Java 8:ssa kaikki rajapinnan <code>Collection</code> toteuttavat luokat mahdollistavat alkioidensa käsittelyn <code>Stream</code>:ina eli "alkiovirtoina", ks. [API-kuvaus](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html). Kokoelmaluokasta saadaan sitä vastaava alkiovirta kutsumalla kokoelmalle metodia <code>stream</code>.
@@ -1228,10 +1228,10 @@ Nyt saamme muutettua kirjan rivien streamin _ehdon_ täyttävien rivien streamik
 
 
 ``` java
-    public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
-       // ei toimi vielä
-       rivit.stream().filter(ehto)
-    }
+public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
+    // ei toimi vielä
+    rivit.stream().filter(ehto)
+}
 ```
 
 Metodin tulee palauttaa filtteröidyn streamin alkioista koostuva lista. Stream saadaan muutettua listaksi "keräämällä" sen sisältämät alkiot kutsumalla streamille metodia <code>collect</code> ja määrittelemällä, että palautetaan streamin sisältämät alkiot niemenomaan listana. Näin luotu filtteröity lista voidaan sitten palauttaa metodin kutsujalle.
@@ -1239,9 +1239,9 @@ Metodin tulee palauttaa filtteröidyn streamin alkioista koostuva lista. Stream 
 Metodi on siis seuraavassa:
 
 ``` java
-    public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
-        return rivit.stream().filter(ehto).collect(Collectors.toList());
-    }
+public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
+    return rivit.stream().filter(ehto).collect(Collectors.toList());
+}
 ```
 
 Kuten huomaamme, Javan version 8 tarjoamat funktionaaliset piirteet muuttavat lähes vallankumouksellisella tavalla kielen ilmaisuvoimaa!
@@ -1403,7 +1403,6 @@ Koska KoosteElementti toteuttaa itsekin rajapinnan Elementti, tarkoittaa tämä 
 Ohjelman rakenne tällä hetkellä
 
 ![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-7.png)
-
 
 Huomaamme, että <code>Elementti</code> on _funktionaalinen rejapinta_ eli se määrittelee ainoastaan yhden sen metodin joka rajapinnan toteuttavien luokkien on toteutettava. Kuten [edellisessä esimerkissä](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuunnittelu.md#koodissa-olevan-epätriviaalin-copypasten-poistaminen-strategy-patternin-avulla-java-8a-hyödyntävä-versio) totesimme voimme käyttää Java 8:n lambda-lausekkeita korvaamaan funktionaalisen rajapinnan toteuttavien luokkien instanssien tilalla. Koska luokat <code>TekstiElementti</code>, <code>ErotinElementti</code> ja <code>KoosteElementti</code> ovat niin yksinkertaisia, ei luokkia välttämättä tarvitse määritellä eksplisiittisesti. Voimmekin palauttaa elementtitehtaasta niiden tilalla sopivat lambda-lausekkeen avulla määritellyt elementit:
 
@@ -1697,21 +1696,21 @@ public class Pino {
 }
 
 public static void main(String[] args) {
-        Scanner lukija = new Scanner(System.in);
-        Pino pino = new Pino();
+    Scanner lukija = new Scanner(System.in);
+    Pino pino = new Pino();
 
-        System.out.println("pinotaan, tyhjä lopettaa:");
-        while (true) {
-            String pinoon = lukija.nextLine();
-            if (pinoon.isEmpty()) {
-                break;
-            }
-            pino.push(pinoon);
+    System.out.println("pinotaan, tyhjä lopettaa:");
+    while (true) {
+        String pinoon = lukija.nextLine();
+        if (pinoon.isEmpty()) {
+            break;
         }
-        System.out.println("pinossa oli: ");
-        while (!pino.empty()) {
-            System.out.println( pino.pop() );
-        }
+        pino.push(pinoon);
+    }
+    System.out.println("pinossa oli: ");
+    while (!pino.empty()) {
+        System.out.println( pino.pop() );
+    }
 }
 ```
 
@@ -1930,9 +1929,9 @@ Factoryperiaate ei kyllä ole tilanteeseen ideaali. Kokeillaan rakentaja (engl. 
 Rakentaja-suunnittelumalli sopii tilanteeseemme erittäin hyvin. Pyrkimyksenämme on mahdollistaa pinon luominen seuraavaan tyyliin:
 
 ``` java
-    Pinorakentaja rakenna = new Pinorakentaja();
+Pinorakentaja rakenna = new Pinorakentaja();
 
-    Pino pino = rakenna.prepaid(10).kryptattu().pino();
+Pino pino = rakenna.prepaid(10).kryptattu().pino();
 ```
 
 Rakentajan metodinimet ja rakentajan muuttujan nimi on valittu mielenkiinoisella tavalla. On pyritty mahdollisimman luonnollista kieltä muistuttavaan ilmaisuun pinon luonnissa. Kyseessä onkin oikeastaan [DSL](https://martinfowler.com/bliki/DomainSpecificLanguage.html) (domain specific language) pinojen luomiseen!
@@ -1966,9 +1965,9 @@ eli kun <code>Rakentaja</code>-olio luodaan, rakentajan luo pinon. Rakentajan "r
 Laajennetaan nyt rakentajaa siten, että voimme luoda prepaidpinoja seuraavasti:
 
 ``` java
-    Pinorakentaja rakenna = new Pinorakentaja();
+Pinorakentaja rakenna = new Pinorakentaja();
 
-    Pino pino = rakenna.prepaid(10).pino();
+Pino pino = rakenna.prepaid(10).pino();
 ```
 
 Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metodi jonka tyyppi on <code>Pinorakentaja prepaid(int kreditit)</code>, eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia <code>pino</code>, on metodin <code>prepaid</code> palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
@@ -2068,7 +2067,7 @@ Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en
 Tällä tekniikalla toteutetuista rajapinnoista käytetään myös nimitystä
 [fluent interface](https://martinfowler.com/bliki/FluentInterface.html).
 
-## adapteri
+## Adapteri
 
 Äsken käsiteltyjen suunnittelmallien, dekoraattorin, komposiitin ja proxyn yhteinen puoli on, että saman ulkokuoren eli rajapinnan takana voi olla yhä monimutkaisempaa toiminnallisuutta joka on kuitenkin täysin kapseloitu käyttäjältä.
 
@@ -2125,18 +2124,17 @@ Eli adapteri __HyväPino__ kapseloi adaptoitavan Pino-olion jolle se delegoi kai
 
 ``` java
 public static void main(String[] args) {
-        HyväPino pino = new HyväPino();
-        pino.pinoon("eka", "toka", "kolmas", "neljäs");
+    HyväPino pino = new HyväPino();
+    pino.pinoon("eka", "toka", "kolmas", "neljäs");
 
-        System.out.println("pinossa oli: ");
-        for (String alkio : pino.kaikkiPinosta()) {
-            System.out.println( alkio );
-        }
+    System.out.println("pinossa oli: ");
+    for (String alkio : pino.kaikkiPinosta()) {
+        System.out.println( alkio );
+    }
 }
 ```
 
 ## MVC eli Model View Controller
-
 
 Model View Controller (MVC) -mallilla tarkoitetaan periaatetta, jonka avulla _model_ eli sovelluslogiikan sisältävät oliot eristetään käyttöliittymän näytöt (view) generoivasta koodista. Toimintaa koordinoivana komponenttina ovat _kontrollerit_, jotka reagoivat käyttäjän syötteisiin kutsumalla tarvittavia model-oliota ja pyytämällä viewejä päivittämään näkymät operaatioiden edellyttämällä tavalla.
 
@@ -2146,7 +2144,7 @@ Esim. Javalla tehdyissä käyttöliittymäsovelluksissa painikkeiden klikkailuun
 
 Koska kontrollerit hoitavat käyttöliittymäspesifejä tehtäviä kuten painikkeisiin reagoimista, niiden ajatellaan esim. kerrosarkkitehtuurista puhuttaessa liittyvän käyttöliittymäkerrokseen. 
 
-Teemme nyt erittäin yksinkertaisen MVC-periaatetta noudattavan sovelluksen käyttäen Javan Swing-käyttöliittymäkirjastoa. Jos suoritut Ohjelmoinnin jatkokurssin kevään  2017 jälkeen ei Swing ole välttämättä tuttu sillä kurssi käytti käyttöliittymäkirjastona Java FX:ää. Periaatteet ovat kuitenkin samat. 
+Teemme nyt erittäin yksinkertaisen MVC-periaatetta noudattavan sovelluksen käyttäen Javan FX -käyttöliittymäkirjastoa. 
 
 Sovelluslogiikka on seuraavassa:
 
@@ -2164,82 +2162,98 @@ public class Sovelluslogiikka {
     }
 
     public void arvoLuku() {
-        int luku = 1+new Random().nextInt(20);
+        int luku = 1 + new Random().nextInt(20);
         luvut.add(luku);
     }
-
 }
 ```
 
 Eli sovelluksella voi arpoa lukuja koko ajan uusia lukuja. Sovelluslogiikka muistaa kaikki arpomansa luvut.
 
-Näytössä on painike, jolla pyydetään uuden luvun arpomista sekä tekstikenttä, missä arvotut luvut näytetään:
+Näkymässä on painike, jolla pyydetään uuden luvun arpomista sekä tekstikenttä, missä arvotut luvut näytetään:
 
 
 ``` java
-public class Naytto extends JFrame {
-
-    private JButton nappi;
-    private JTextArea teksti;
-
-    public Naytto() {
-        setLayout(new GridLayout(2, 1));
-        teksti = new JTextArea(1, 80);
-        teksti.setText("[]");
-        nappi = new JButton("uusi");
-        add(teksti);
-        add(nappi);
-
-        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+public class Nakyma extends Pane {
+    private Button nappi;
+    private Label teksti;
+    
+    public Nakyma() {
+        super();
+        
+        VBox box = new VBox(10);
+        teksti  = new Label("[]");       
+        nappi = new Button("uusi");          
+             
+        box.getChildren().addAll(teksti, nappi);   
+        
+        getChildren().add(box);
     }
-
+      
     public void update(String sisalto){
         teksti.setText(sisalto);
     }
 
-    public void asetaKontrolleri(ActionListener listener){
-        nappi.addActionListener(listener);
+    public void asetaKontrolleri(EventHandler listener){
+        nappi.setOnAction(listener);
     }
 }
 ```
 
-Näyttö on täysin passiivinen, se ei sisällä edes tapahtumakuuntelijaa joka on MVC:n hengen mukaisesti laitettu kontrolleriin:
+Näkymä on täysin passiivinen, se ei sisällä edes tapahtumakuuntelijaa joka on MVC:n hengen mukaisesti laitettu kontrolleriin:
 
 
 ``` java
-public class Kontrolleri implements ActionListener {
-    private Naytto naytto;
-    private Sovelluslogiikka model;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 
-    public Kontrolleri(Naytto naytto, Sovelluslogiikka model) {
-        this.naytto = naytto;
-        this.model = model;
-        naytto.asetaKontrolleri(this);
+public class Kontrolleri implements EventHandler {
+    private Sovelluslogiikka logiikka;
+    private Nakyma nakyma;
+    
+    public Kontrolleri(Nakyma nakyma, Sovelluslogiikka logiikka) {
+        this.logiikka = logiikka;
+        this.nakyma = nakyma;
+        this.nakyma.asetaKontrolleri(this);
+    }
+     
+    @Override
+    public void handle(Event event) {
+        logiikka.arvoLuku();
+        String dataNaytolle = logiikka.getLuvut().toString();
+        nakyma.update(dataNaytolle);
     }
 
-    public void actionPerformed(ActionEvent ae) {
-        model.arvoLuku();
-        String dataNaytolle = model.getLuvut().toString();
-        naytto.update( dataNaytolle );
-    }
 }
 ```
 
 Kontrolleri tuntee _näytön_ ja sovelluslogiikan eli _modelin_. Konstruktorissa kontrolleri asettaa itsensä tapahtumakuuntelijaksi näytössä olevalle painikkeelle.
 
-Kun nappia painetaan, eli metodin _actionPerformed_ suorituksen yhteydessä kontrolleri pyytää modelia arpomaan uuden luvun. Sen jälkeen kontrolleri hakee luvut modelilta ja asettaa ne tekstimuoisena näytölle käyttäen näytön update-metodia.
+Kun nappia painetaan, eli metodin _handle_ suorituksen yhteydessä kontrolleri pyytää modelia arpomaan uuden luvun. Sen jälkeen kontrolleri hakee luvut modelilta ja asettaa ne tekstimuoisena näytölle käyttäen näytön update-metodia.
 
 Itse sovellus ainoastaan luo oliot ja antaa näytön sekä modelin kontrollerille:
 
 ``` java
-public class MVCSovellus {
+public class FxMVC extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        VBox pane = new VBox();
+            
+        Sovelluslogiikka logiikka = new Sovelluslogiikka();
+        
+        Nakyma nakyma = new Nakyma();
+        Kontrolleri k = new Kontrolleri(nakyma, logiikka);
+        pane.getChildren().add(nakyma);          
+  
+        Scene scene = new Scene(pane, 300, 250);
+        
+        primaryStage.setTitle("MVC example app");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
-    public void kaynnista() {
-        Naytto naytto = new Naytto();
-        Sovelluslogiikka model = new Sovelluslogiikka();
-        Kontrolleri kontrolleri = new Kontrolleri(naytto, model);
+    public static void main(String[] args) {
+        launch(args);
     }
 }
 ```
@@ -2250,22 +2264,33 @@ Rakenne luokkakaaviona:
 
 Model eli sovelluslogiikka on nyt täysin tietämätön siitä kuka sen kutsuu. 
 
-Päätämme lisätä ohjelmaan useampia näyttöjä, joille kaikille tulee oma kontrolleri.
+Päätämme lisätä ohjelmaan useampia näyttöjä, joille kaikille tulee oma kontrolleri:
 
 ``` java
-public class MVCSovellus2 {
-
-    public void kaynnista() {
-        Sovelluslogiikka model = new Sovelluslogiikka();
+public class FxMVC extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) {
+        VBox pane = new VBox();
+            
+        Sovelluslogiikka logiikka = new Sovelluslogiikka();
+        
         for (int i = 0; i < 3; i++) {
-            luoNaytto(model);
+            Nakyma nakyma = new Nakyma();
+            Kontrolleri k = new Kontrolleri(nakyma, logiikka);
+            pane.getChildren().add(nakyma);          
         }
+  
+        Scene scene = new Scene(pane, 300, 250);
+        
+        primaryStage.setTitle("MVC example app");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
-    private void luoNaytto(Sovelluslogiikka model) {
-        Naytto naytto = new Naytto();
-        Kontrolleri kontrolleri = new Kontrolleri(naytto, model);
-    }
+    public static void main(String[] args) {
+        launch(args);
+    } 
 }
 ```
 
@@ -2348,7 +2373,7 @@ public class Sovelluslogiikka {
     }
 
     public void arvoLuku(){
-        int luku = 1+new Random().nextInt(20);
+        int luku = 1 + new Random().nextInt(20);
         luvut.add(luku);
     }
 
@@ -2362,30 +2387,31 @@ Sovelluslogiikalla ei nyt ole konkreettista riippuvuutta mihinkään tarkkailija
 Kontrolleri muuttuu seuraavasti:
 
 ``` java
-public class Kontrolleri implements ActionListener, Observer {
-    private Naytto naytto;
-    private Sovelluslogiikka model;
-
-    public Kontrolleri(Naytto naytto, Sovelluslogiikka model) {
-        this.naytto = naytto;
-        this.model = model;
-        naytto.asetaKontrolleri(this);
-        model.addObserver(this);
+public class Kontrolleri implements EventHandler, Observer {
+    private Sovelluslogiikka logiikka;
+    private Nakyma nakyma;
+    
+    public Kontrolleri(Nakyma nakyma, Sovelluslogiikka logiikka) {
+        this.logiikka = logiikka;
+        this.nakyma = nakyma;
+        this.nakyma.asetaKontrolleri(this);
+        this.logiikka.addObserver(this);
     }
-
-    public void actionPerformed(ActionEvent ae) {
-        model.arvoLuku();
-        model.notifyObservers();
+     
+    @Override
+    public void handle(Event event) {
+        logiikka.arvoLuku();
+        logiikka.notifyObservers();
     }
 
     public void update() {
-        String dataNaytolle = model.getLuvut().toString();
-        naytto.update( dataNaytolle );
-    }
+        String dataNaytolle = logiikka.getLuvut().toString();
+        nakyma.update(dataNaytolle);
+    }    
 }
 ```
 
-Kontrolleri toimii tarkkailijana eli toteuttaa rajapinnan _Observer_. Kun nappia painetaan, eli _actionPerformed_-metodissa, kontrolleri pyytää modelia arpomaan uuden luvun ja samalla pyytää modelia ilmoittamaan tarkkailijoille muuttuneen arvon.
+Kontrolleri toimii tarkkailijana eli toteuttaa rajapinnan _Observer_. Kun nappia painetaan, eli _handle_-metodissa, kontrolleri pyytää modelia arpomaan uuden luvun ja samalla pyytää modelia ilmoittamaan tarkkailijoille muuttuneen arvon.
 
 _update_-metodia kutsuttaessa (jota siis sovelluslogiikka kutsuu kun sen tila muuttuu) hakee kontrolleri sovelluslogiikan uuden tilan ja suorittaa hallinnoimansa näytön päivityksen.
 
