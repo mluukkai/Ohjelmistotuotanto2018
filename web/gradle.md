@@ -149,21 +149,7 @@ Ennen kun siirryt eteenpäin suorita _gradle clean_ joka poistaa kaikki edellise
 
 Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi tekstieditorilla. 
 
-Älä käytä nanoa, notepadia tai geditiä vaan ota käyttöön jokin ohjelmointiin suunniteltu editori. Hyviä vaihtoehtoja ovat esim:
-* https://code.visualstudio.com
-* https://atom.io
-* https://www.sublimetext.com
-
-Laitoksen koneilla ei valitettavasti ole mitään järkevää editoria. Voit asentaa Atomin laitoksen koneelle seuraavasti
-* mene esim. kotihakemistoosi (komennolla cd)
-* lataa atom komennolla _wget https://github.com/atom/atom/releases/download/v1.15.0/atom-amd64.tar.gz_
-* pura paketti komennolla _tar -xf atom-amd64.tar.gz_
-* editorin voi nyt käynnistää komennolla _~/atom-1.15.0-amd64/atom_
-* jos lisäät kotihakemistossasi olevaan tiedostoon _.bashrc_ seuraavan rivin
-```bash
-alias atom='~/atom-1.15.0-amd64/atom'
-```
-ja uudelleenkäynnistät terminaalin, voit käynnistää atomin missä vaan komennolla _atom_
+Hyvä vaihtoehto on laitoksen koneilta ja fuksiläppäreilt löytyvä [Visual Studio Code](https://code.visualstudio.com)
 
 ## Koodin lisääminen projektiin
 
@@ -201,7 +187,7 @@ $ java Main
 Hello gradle!
 </pre>
 
-Yleensä java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon 1 [tehtävän 7](https://github.com/mluukkai/ohjelmistotuotanto2017/blob/master/laskarit/1.md#7-gradle) tapaan.
+Yleensä java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon 1 [tehtävän 7](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/1.md#7-gradle) tapaan.
 
 Jar-tiedosto muodostetaan gradlen taskilla jar. Help kertoo seuraavaa:
 
@@ -324,7 +310,7 @@ Exception in thread "main" java.util.NoSuchElementException: No line found
 FAILURE: Build failed with an exception.
 </pre>
 
-Syynä tälle on se, että oletusarvoisesti gradlen _run_-task ei liitä terminaalia systeein "inputvirtaan". Asia saadaan korjautumaan lisäämällä tiedostoon _build.gradle_ seuraava: 
+Syynä tälle on se, että oletusarvoisesti gradlen _run_-task ei liitä terminaalia system.in "inputvirtaan". Asia saadaan korjautumaan lisäämällä tiedostoon _build.gradle_ seuraava: 
 
 <pre>
 run {
@@ -450,4 +436,5 @@ Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii.
 
 Rikotaan vielä testi ja varmistetaan että junit huomaa virheen.
 
-JUnitisita on pitkän odotuksen jälkeen ilmestynyt JUnitin uusi versio [JUnit5](http://junit.org/junit5/) on ilmestynyt vuosien odotuksen jälkeen tämän vuoden syyskuussa. JUnit5:ssä on monia mielenkiintoisia uudistuksia, mutta valitettavasti työkalutuki on tässä vaiheessa vielä niin kesken, että joudumme kurssilla käyttämään vielä vanhaa JUnitia.
+JUnitin uusi versio [JUnit5](http://junit.org/junit5/) on ilmestynyt vuosien odotuksen jälkeen tämän vuoden syyskuussa. JUnit5:ssä on monia mielenkiintoisia uudistuksia, mutta valitettavasti työkalutuki on tässä vaiheessa vielä niin kesken, että joudumme kurssilla käyttämään vielä vanhaa JUnitia.
+
