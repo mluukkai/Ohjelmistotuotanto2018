@@ -1,3 +1,2 @@
 ### HALOO??
-ny oon tehny tokatki tehtävät.
-week tre ._.
+ni hao ma?
