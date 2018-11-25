@@ -28,6 +28,7 @@ dependencies {
     testCompile group: 'org.fluentlenium', name: 'fluentlenium-assertj', version: '0.10.3' 
     testCompile 'info.cukes:cucumber-java:' + cucumberVersion
     testCompile 'info.cukes:cucumber-junit:' + cucumberVersion   
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver',version: seleniumVersion
     compile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version:seleniumVersion
     compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version:seleniumVersion
     compile group: 'org.seleniumhq.selenium', name: 'selenium-api', version:seleniumVersion

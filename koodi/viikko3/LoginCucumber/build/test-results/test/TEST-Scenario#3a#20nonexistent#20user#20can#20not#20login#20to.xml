@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: nonexistent user can not login to" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-11-18T07:11:13" hostname="dhcp-asv-91" time="0.002">
+  <properties/>
+  <testcase name="Given command login is selected" classname="Scenario: nonexistent user can not login to" time="0.0"/>
+  <testcase name="When username &quot;topi&quot; and password &quot;erkki62&quot; are entered" classname="Scenario: nonexistent user can not login to" time="0.0"/>
+  <testcase name="Then system will respond with &quot;wrong username or password&quot;" classname="Scenario: nonexistent user can not login to" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: nonexistent user can not login to" time="0.004"/>
+  <system-out><![CDATA[
+  Scenario: user can not login with incorrect password         ?[90m# ohtu/login.feature:8?[0m
+    ?[32mGiven ?[0m?[32mcommand login is selected?[0m                            ?[90m# Stepdefs.command_login_selected()?[0m
+    ?[32mWhen ?[0m?[32musername "?[0m?[32m?[1mpekka?[0m?[32m" and password "?[0m?[32m?[1mpekka?[0m?[32m" are entered?[0m     ?[90m# Stepdefs.a_username_and_password_are_entered(String,String)?[0m
+    ?[32mThen ?[0m?[32msystem will respond with "?[0m?[32m?[1mwrong username or password?[0m?[32m"?[0m ?[90m# Stepdefs.system_will_respond_with(String)?[0m
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

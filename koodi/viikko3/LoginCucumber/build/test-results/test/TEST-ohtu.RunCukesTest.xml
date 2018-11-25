@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.RunCukesTest" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="dhcp-asv-91" time="0.0">
+  <properties/>
+  <system-out><![CDATA[Feature: User can log in with valid username/password-combination
+
+  Scenario: nonexistent user can not login to                  ?[90m# ohtu/login.feature:13?[0m
+    ?[32mGiven ?[0m?[32mcommand login is selected?[0m                            ?[90m# Stepdefs.command_login_selected()?[0m
+    ?[32mWhen ?[0m?[32musername "?[0m?[32m?[1mtopi?[0m?[32m" and password "?[0m?[32m?[1merkki62?[0m?[32m" are entered?[0m    ?[90m# Stepdefs.a_username_and_password_are_entered(String,String)?[0m
+    ?[32mThen ?[0m?[32msystem will respond with "?[0m?[32m?[1mwrong username or password?[0m?[32m"?[0m ?[90m# Stepdefs.system_will_respond_with(String)?[0m
+Feature: A new user account can be created if a proper unused username and password are given
+
+  Scenario: can login with successfully generated account     ?[90m# ohtu/new_user.feature:28?[0m
+    ?[32mGiven ?[0m?[32muser "?[0m?[32m?[1meero?[0m?[32m" with password "?[0m?[32m?[1msalainen1?[0m?[32m" is created?[0m    ?[90m# Stepdefs.user_with_password_is_created(String,String)?[0m
+    ?[32mAnd ?[0m?[32mcommand login is selected?[0m                             ?[90m# Stepdefs.command_login_selected()?[0m
+    ?[32mWhen ?[0m?[32musername "?[0m?[32m?[1meero?[0m?[32m" and password "?[0m?[32m?[1msalainen1?[0m?[32m" are entered?[0m ?[90m# Stepdefs.a_username_and_password_are_entered(String,String)?[0m
+    ?[32mThen ?[0m?[32msystem will respond with "?[0m?[32m?[1mlogged in?[0m?[32m"?[0m                 ?[90m# Stepdefs.system_will_respond_with(String)?[0m
+
+9 Scenarios (?[32m9 passed?[0m)
+28 Steps (?[32m28 passed?[0m)
+0m0.104s
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
