@@ -719,7 +719,7 @@ public class Laskin {
 
             Operaatio operaatio = Operaatio.luo(komento, luku1, luku2);
 
-            io.print("summa: " + operaatio.laske() + "\n");
+            io.print(komento + ": " + operaatio.laske() + "\n");
         }
     }
 }
