@@ -1,4 +1,5 @@
 apply plugin: 'java'
+
 apply plugin: 'application'
 
 repositories {
@@ -10,8 +11,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-mainClassName = 'ohtu.intjoukkosovellus.Sovellus'
-
-run {
-    standardInput = System.in
-}
+mainClassName = 'statistics.Main'

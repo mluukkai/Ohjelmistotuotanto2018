@@ -186,6 +186,6 @@ Kun nyt suoritat testit, näyttää tulos seuraavalta:
 
 Eli cucumber ilmoittaa osan stepeistä olevan _undefined_. Cucumber tulostaa myös valmiin koodirungon, jonka avulla stepin voi toteuttaa.
 
-Kopioi stepin koorirunko stepit toteuttavaan luokkaan ja täydennä se järkevällä tavalla. 
+Kopioi stepin koodirunko stepit toteuttavaan luokkaan ja täydennä se järkevällä tavalla. 
 
 Varmista että testit toimivat.
