@@ -11,9 +11,7 @@ Esimerkki artikkelista [http://www.ibm.com/developerworks/java/library/j-eaed4/i
 
 ``` java
 public void populate() throws Exception {
-    Connection c = null;
-    try {
-        c = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+    try (Connection c = DriverManager.getConnection(DB_URL, USER, PASSWORD)) {
         Statement stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery(SQL_SELECT_PARTS);
         while (rs.next()) {
@@ -23,8 +21,6 @@ public void populate() throws Exception {
             p.setRetailPrice(rs.getDouble("retail_price"));
             partList.add(p);
         }
-    } finally {
-        c.close();
     }
 }
 ```
@@ -42,15 +38,11 @@ Metodi on helppo __refaktoroida__ pilkkomalla se pienempiin osiin joiden kutsumi
 
 ``` java
 public void populate() throws Exception {
-    Connection c = null;
-    try {
-        c = getDatabaseConnection();
+    try (Connection c = getDatabaseConnection()) {
         ResultSet rs = createResultSet(c);
         while (rs.next()){
             addPartToListFromResultSet(rs);
         }
-    } finally {
-        c.close();
     }
 }
 
