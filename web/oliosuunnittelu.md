@@ -729,7 +729,7 @@ Jatkamme muokkaamista seuraavassa luvussa
 
 ## laskin ja komento-olio
 
-Muutamme Operaatio-luokan olemusta, päädymme jo oikeastaan Strategy-suunnittelumallin lähisukulaisen _Command_-suunnittelumallin puolelle ja annammekin sille nimen Komento ja teemmie siitä rajapinnan sillä siirrämme erillisten komento-olioiden luomisen Komentotehdas-luokalle:
+Muutamme Operaatio-luokan olemusta, päädymme jo oikeastaan Strategy-suunnittelumallin lähisukulaisen _Command_-suunnittelumallin puolelle ja annammekin sille nimen Komento, ja teemme siitä rajapinnan sillä siirrämme erillisten komento-olioiden luomisen Komentotehdas-luokalle:
 
 ``` java
 public interface Komento {
