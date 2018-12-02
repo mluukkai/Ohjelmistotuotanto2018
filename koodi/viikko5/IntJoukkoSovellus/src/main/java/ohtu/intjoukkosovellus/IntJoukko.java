@@ -186,7 +186,7 @@ public class IntJoukko {
             z.lisaa(aTaulu[i]);
         }
         for (int i = 0; i < bTaulu.length; i++) {
-            z.poista(i);
+            z.poista(bTaulu[i]);
         }
  
         return z;
