@@ -8,6 +8,7 @@
 
 Muutos viikko 4
 Muutos viikko 5
+Muutos viikko 6
 
 ## Laskarit
 
