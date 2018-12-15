@@ -1,6 +1,39 @@
 Tämä materiaali on tarkoitettu itseopiskeltavaksi ennen viikon 5, 6 ja 7 laskarien tekemistä. Materiaali täydentää [luennon 8](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/kalvot/luento8.pdf?raw=true)
 asiaa.
 
+## Sisällysluettelo
+
+* [Koheesio](#user-content-koheesio)
+* [Koheesio metoditasolla](#user-content-koheesio-metoditasolla)
+* [Single responsibility -periaate eli koheesio luokkatasolla](#user-content-single-responsibility--periaate-eli-koheesio-luokkatasolla)
+* [Favour composition over inheritance eli milloin ei kannata periä](#user-content-favour-composition-over-inheritance-eli-milloin-ei-kannata-periä)
+    * [Factory](#user-content-factory)
+    * [Strategy](#user-content-strategy)
+    * [Tilin luominen](#user-content-tilin-luominen)
+* [Laskin ilman iffejä](#user-content-laskin-ilman-iffejä)
+* [laskin ja komento-olio](#user-content-laskin-ja-komento-olio)
+    * [Command](#user-content-command)
+    * [lisää komentoja](#user-content-lisää-komentoja)
+    * [template method](#user-content-template-method)
+* [Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla, Java 8:a hyödyntävä versio](#user-content-koodissa-olevan-epätriviaalin-copypasten-poistaminen-strategy-patternin-avulla-java-8a-hyödyntävä-versio)
+* [Komposiitti](#user-content-komposiitti)
+* [Proxy](#user-content-proxy)
+* [Dekoroitu Random](#user-content-dekoroitu-random)
+* [Dekoroitu pino](#user-content-dekoroitu-pino)
+* [Pinotehdas](#user-content-pinotehdas)
+* [Pinorakentaja](#user-content-pinorakentaja)
+* [Adapteri](#user-content-adapteri)
+* [MVC eli Model View Controller](#user-content-mvc-eli-model-view-controller)
+* [Käyttöliittymän päivittäminen sovelluslogiikan tilan muuttuessa](#user-content-käyttöliittymän-päivittäminen-sovelluslogiikan-tilan-muuttuessa)
+* [Observer](#user-content-observer)
+* [sovelluksen observeria käyttävä versio](#user-content-sovelluksen-observeria-käyttävä-versio)
+* [Pelaajastatistiikkaa Java 8:lla](#user-content-pelaajastatistiikkaa-java-8lla)
+    * [forEach](#user-content-foreach)
+    * [filter](#user-content-filter)
+    * [järjestäminen](#user-content-järjestäminen)
+    * [numeerinen statistiikka](#user-content-numeerinen-statistiikka)
+* [Builder revisited](#user-content-builder-revisited)
+
 ## Koheesio
 
 Koheesiolla tarkoitetaan sitä, kuinka pitkälle metodissa, luokassa tai komponentissa oleva ohjelmakoodi on keskittynyt tietyn toiminnallisuuden toteuttamiseen. Hyvänä asiana pidetään mahdollisimman korkeaa koheesion astetta. Koheesioon tulee siis pyrkiä kaikilla ohjelman tasoilla, metodeissa, luokissa, komponenteissa ja jopa muuttujissa (samaa muuttujaa ei saa uusiokäyttää eri asioiden tallentamiseen). 
