@@ -6,6 +6,7 @@
 ## Muutos viikolta 4
 ## Muutos viikolta 5
 ## Muutos viikolta 6
+## Muutos viikolta 7
 
 ## Luentokalvot
 
