@@ -1,1 +1,0 @@
-Gitin brancheihin ja injektointiin liittyvät tehtävät olivat kiinnostavia, mutta Springin yhteensopivuudet tuottivat hieman ongelmia.
